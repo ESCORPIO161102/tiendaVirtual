@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    font-family: "Times New Roman", serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+.app-sidebar__user-avatar {
+    width: 48px;
+    background: gray;
+    padding: 6px;
+}
+.app-sidebar__toggle{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 15pt;
+}
+.app-sidebar__toggle::before{
+	display: none;
+}
+.headerRegister, .header-primary{
+	background: #009688;
+	color: #FFF;
+}
+.headerUpdate{
+	background: #007bff;
+	color: #FFF;
+}
+.notBlock{
+	display: none;
+}
+.tile-bodyy{
+	padding: 20px;
+	font-size: 30px;      /* Aumenta el tamaño */
+    font-weight: 500;   /*LO HACE MAS GRUESO*/
+	letter-spacing: -1px; /*ACER CA O ALEJA LAS ÑETRAS */
+    
+
+
+}
