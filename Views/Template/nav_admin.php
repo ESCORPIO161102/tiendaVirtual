@@ -20,6 +20,18 @@
                 <span class="app-menu__label">Accesorios</span>
             </a>
         </li>
+        <li>
+            <a class="app-menu__item" href="<?= base_url(); ?>/usuarios">
+                <i class="app-menu__icon fa fa-dashboard"></i>
+                <span class="app-menu__label">Registro Usuarios</span>
+            </a>
+        </li>
+        <li>
+            <a class="app-menu__item" href="<?= base_url(); ?>/pacientes">
+                <i class="app-menu__icon fa fa-dashboard"></i>
+                <span class="app-menu__label">Registro Productos</span>
+            </a>
+        </li>
         <li class="treeview">
             <a class="app-menu__item" href="#" data-toggle="treeview">
                 <i class="app-menu__icon fa fa-users" aria-hidden="true"></i>
@@ -34,7 +46,7 @@
         </li>
         
         <li>
-            <a class="app-menu__item" href="<?= base_url(); ?>/logout">
+            <a class="app-menu__item" id="exit-site2" href="#">
                 <i class="app-menu__icon fa fa-sign-out" aria-hidden="true"></i>
                 <span class="app-menu__label">Logout</span>
             </a>

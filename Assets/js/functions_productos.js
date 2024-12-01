@@ -123,36 +123,42 @@ function eliminarCurso(e) {
 
 
 // Muestra el curso seleccionado en el Carrito
+// Muestra el curso seleccionado en el Carrito
 function carritoHTML() {
-
-    vaciarCarrito();
-
-    articulosCarrito.forEach(curso => {
-         const row = document.createElement('tr');
-         row.innerHTML = `
-              <td>  
-                   <img src="${curso.imagen}" width=100>
-              </td>
-              <td>${curso.titulo}</td>
-              <td>${curso.precio}</td>
-              <td>${curso.cantidad} </td>
-              <td>
-                   <a href="#" class="borrar-curso" data-id="${curso.id}">X</a>
-              </td>
-         `;
-         contenedorCarrito.appendChild(row);
-    });
-
-}
-
-// Elimina los cursos del carrito en el DOM
-function vaciarCarrito() {
-    // forma lenta
-    // contenedorCarrito.innerHTML = '';
-
-
-    // forma rapida (recomendada)
-    while(contenedorCarrito.firstChild) {
+     // Limpiar el HTML previo del contenedor del carrito (solo el DOM, no el array)
+     while (contenedorCarrito.firstChild) {
          contenedorCarrito.removeChild(contenedorCarrito.firstChild);
      }
-}
+ 
+     // Generar el nuevo HTML basado en `articulosCarrito`
+     articulosCarrito.forEach(curso => {
+         const row = document.createElement('tr');
+         row.innerHTML = `
+             <td>  
+                 <img src="${curso.imagen}" width=100>
+             </td>
+             <td>${curso.titulo}</td>
+             <td>${curso.precio}</td>
+             <td>${curso.cantidad} </td>
+             <td>
+                 <a href="#" class="borrar-curso" data-id="${curso.id}">X</a>
+             </td>
+         `;
+         contenedorCarrito.appendChild(row);
+     });
+ }
+ 
+
+// Elimina los cursos del carrito en el DOM
+// Elimina los cursos del carrito en el DOM
+function vaciarCarrito() {
+     // Vaciar el contenedor del carrito en el DOM
+     while (contenedorCarrito.firstChild) {
+         contenedorCarrito.removeChild(contenedorCarrito.firstChild);
+     }
+ 
+     // Reiniciar el array
+     articulosCarrito = [];
+ }
+ 
+ 
