@@ -16,32 +16,38 @@
             <div id="lista-accesorios" class="container">
     <h1 id="encabezados" class="encabezado">Infortec Accesorios</h1>
     <div class="row">
-        <!-- Producto 1 -->
-        <div class="four columns">
-            <div class="card">
-                <img src="<?= media();?>/images/2.jpg" class="imagen-producto u-full-width" data-id="1">
-                <div class="info-card">
-                    <h4>HTML5, CSS3, JavaScript para Principiantes</h4>
-                    <p>Juan Pedro</p>
-                    <img src="<?= media();?>/images/estrellas.png">
-                    <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
-                    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="51">Agregar Al Carrito</a>
-                </div>
-            </div>
+             <!-- Producto 1 -->
+<div class="four columns">
+    <div class="card">
+        <img src="<?= media();?>/images/2.jpg" class="imagen-producto u-full-width" data-id="1">
+        <div class="info-card">
+            <h4>HTML5, CSS3, JavaScript para Principiantes</h4>
+            <p hidden>Juan PJuan Pgggggggggggggggggggggggg
+                        gfdddddddddddddddddddddddddddd
+                        ghghghghghghghghghghghghghghghghghghghgh
+                        dgffdddddddddddddddddddfffffffffffffffffffffff
+                        fffffffffffffffffffffedroedro</p>
+            <img src="<?= media();?>/images/estrellas.png">
+            <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar Al Carrito</a>
         </div>
-        <!-- Detalles del producto 1 -->
-        <div id="detallesProducto-1" class="detalles-producto oculto">
-            <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
-            <div class="contenido-detalles">
-                <img id="imagenProducto-1" src="<?= media();?>/images/2.jpg" alt="Producto" class="imagen-detalles">
-                <div class="info-detalles">
-                    <h2 id="tituloProducto-1">HTML5, CSS3, JavaScript para Principiantes</h2>
-                    <p id="descripcionProducto-1">Descripción del producto aquí.</p>
-                    <p id="precioProducto-1">Precio: $200.00</p>
-                </div>
-            </div>
-            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="51">Agregar Al Carrito</a>
+    </div>
+</div>
+
+       <!-- Detalles del producto 1 -->
+<div id="detallesProducto-1" class="detalles-producto oculto">
+    <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
+    <div class="contenido-detalles">
+        <img id="imagenProducto-1" src="<?= media();?>/images/2.jpg" alt="Producto" class="imagen-detalles">
+        <div class="info-detalles">
+            <h2 id="tituloProducto-1"></h2>
+            <p id="descripcionProducto-1"></p>
+            <p id="precioProducto-1"></p>
         </div>
+    </div>
+    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar Al Carrito</a>
+</div>
+
 
         <!-- Producto 2 -->
         <div class="four columns">
@@ -49,10 +55,14 @@
                 <img src="<?= media();?>/images/curso2.jpg" class="imagen-producto u-full-width" data-id="2">
                 <div class="info-card">
                     <h4>Curso de Comida Vegetariana</h4>
-                    <p>Juan Pedro</p>
+                    <p hidden>Juan Juan Pgggggggggggggggggggggggg
+                        gfdddddddddddddddddddddddddddd
+                        ghghghghghghghghghghghghghghghghghghghgh
+                        dgffdddddddddddddddddddfffffffffffffffffffffff
+                        fffffffffffffffffffffedroPedro</p>
                     <img src="<?= media();?>/images/estrellas.png">
                     <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
-                    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="22">Agregar Al Carrito</a>
+                    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="2">Agregar Al Carrito</a>
                 </div>
             </div>
         </div>
@@ -67,7 +77,7 @@
                     <p id="precioProducto-2">Precio: $200.00</p>
                 </div>
             </div>
-            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="22">Agregar Al Carrito</a>
+            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="2">Agregar Al Carrito</a>
         </div>
 
         <!-- Producto 3 -->
@@ -76,10 +86,14 @@
                 <img src="<?= media();?>/images/curso3.jpg" class="imagen-producto u-full-width" data-id="3">
                 <div class="info-card">
                     <h4>Guitarra para Principiantes</h4>
-                    <p>Juan Pedro</p>
+                    <p hidden>JuaJuan Pgggggggggggggggggggggggg
+                        gfdddddddddddddddddddddddddddd
+                        ghghghghghghghghghghghghghghghghghghghgh
+                        dgffdddddddddddddddddddfffffffffffffffffffffff
+                        fffffffffffffffffffffedron Pedro</p>
                     <img src="<?= media();?>/images/estrellas.png">
                     <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
-                    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="33">Agregar Al Carrito</a>
+                    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="3">Agregar Al Carrito</a>
                 </div>
             </div>
         </div>
@@ -94,11 +108,13 @@
                     <p id="precioProducto-3">Precio: $200.00</p>
                 </div>
             </div>
-            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="33">Agregar Al Carrito</a>
+            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="3">Agregar Al Carrito</a>
         </div>
     </div>
 
 
+
+    </div>
 </div>
         </div>
       </div>

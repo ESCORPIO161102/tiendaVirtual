@@ -17,13 +17,18 @@
         <h1 id="encabezado" class="encabezado">Infortec Productos</h1>
         <div class="row">
         <!-- Producto 1 -->
-        <!-- Producto 1 -->
 <div class="four columns">
     <div class="card">
         <img src="<?= media();?>/images/2.jpg" class="imagen-producto u-full-width" data-id="44">
-        <div class="info-card">
+        <div class="info-card" >
             <h4>HTML5, CSS3, JavaScript para Principiantes</h4>
-            <p>Juan Pedro</p>
+            <p hidden>Jufsdagfdan Pedrohdgjcxdxxxxxxxxxxxxx
+                xxxxxxxxxxxxxxxxxxxxxxxxbvnnnnnnnnnn
+                nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+                nnnnnnnnnnnn
+                nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+                nnnnnnnnnnnnnn
+                nnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</p>
             <img src="<?= media();?>/images/estrellas.png">
             <p class="precio">$200 <span class="u-pull-right">$15</span></p>
             <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="44">Agregar Al Carrito</a>
@@ -52,7 +57,11 @@
                 <img src="<?= media();?>/images/curso2.jpg" class="imagen-producto u-full-width" data-id="22">
                 <div class="info-card">
                     <h4>Curso de Comida Vegetariana</h4>
-                    <p>Juan Pedro</p>
+                    <p hidden>JuanJuan Pgggggggggggggggggggggggg
+                        gfdddddddddddddddddddddddddddd
+                        ghghghghghghghghghghghghghghghghghghghgh
+                        dgffdddddddddddddddddddfffffffffffffffffffffff
+                        fffffffffffffffffffffedro Pedro</p>
                     <img src="<?= media();?>/images/estrellas.png">
                     <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
                     <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="22">Agregar Al Carrito</a>
@@ -79,7 +88,11 @@
                 <img src="<?= media();?>/images/curso3.jpg" class="imagen-producto u-full-width" data-id="33">
                 <div class="info-card">
                     <h4>Guitarra para Principiantes</h4>
-                    <p>Juan Pedro</p>
+                    <p hidden>Juan Pgggggggggggggggggggggggg
+                        gfdddddddddddddddddddddddddddd
+                        ghghghghghghghghghghghghghghghghghghghgh
+                        dgffdddddddddddddddddddfffffffffffffffffffffff
+                        fffffffffffffffffffffedro</p>
                     <img src="<?= media();?>/images/estrellas.png">
                     <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
                     <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="33">Agregar Al Carrito</a>
@@ -108,7 +121,11 @@
                 <img src="<?= media();?>/images/2.jpg" class="imagen-producto u-full-width" data-id="111">
                 <div class="info-card">
                     <h4>HTML5, CSS3, JavaScript para Principiantes</h4>
-                    <p>Juan Pedro</p>
+                    <p hidden>Juan Pgggggggggggggggggggggggg
+                        gfdddddddddddddddddddddddddddd
+                        ghghghghghghghghghghghghghghghghghghghgh
+                        dgffdddddddddddddddddddfffffffffffffffffffffff
+                        fffffffffffffffffffffedro</p>
                     <img src="<?= media();?>/images/estrellas.png">
                     <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
                     <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="111">Agregar Al Carrito</a>
@@ -135,7 +152,11 @@
                 <img src="<?= media();?>/images/curso2.jpg" class="imagen-producto u-full-width" data-id="222">
                 <div class="info-card">
                     <h4>Curso de Comida Vegetariana</h4>
-                    <p>Juan Pedro</p>
+                    <p hidden>Juan Pgggggggggggggggggggggggg
+                        gfdddddddddddddddddddddddddddd
+                        ghghghghghghghghghghghghghghghghghghghgh
+                        dgffdddddddddddddddddddfffffffffffffffffffffff
+                        fffffffffffffffffffffedro</p>
                     <img src="<?= media();?>/images/estrellas.png">
                     <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
                     <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="222">Agregar Al Carrito</a>
@@ -162,7 +183,11 @@
                 <img src="<?= media();?>/images/curso3.jpg" class="imagen-producto u-full-width" data-id="333">
                 <div class="info-card">
                     <h4>Guitarra para Principiantes</h4>
-                    <p>Juan Pedro</p>
+                    <p hidden>Juan Pgggggggggggggggggggggggg
+                        gfdddddddddddddddddddddddddddd
+                        ghghghghghghghghghghghghghghghghghghghgh
+                        dgffdddddddddddddddddddfffffffffffffffffffffff
+                        fffffffffffffffffffffedro</p>
                     <img src="<?= media();?>/images/estrellas.png">
                     <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
                     <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="333">Agregar Al Carrito</a>
@@ -191,7 +216,11 @@
                 <img src="<?= media();?>/images/2.jpg" class="imagen-producto u-full-width" data-id="61">
                 <div class="info-card">
                     <h4>HTML5, CSS3, JavaScript para Principiantes</h4>
-                    <p>Juan Pedro</p>
+                    <p hidden>Juan Pgggggggggggggggggggggggg
+                        gfdddddddddddddddddddddddddddd
+                        ghghghghghghghghghghghghghghghghghghghgh
+                        dgffdddddddddddddddddddfffffffffffffffffffffff
+                        fffffffffffffffffffffedro</p>
                     <img src="<?= media();?>/images/estrellas.png">
                     <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
                     <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="61">Agregar Al Carrito</a>
@@ -218,7 +247,11 @@
                 <img src="<?= media();?>/images/curso2.jpg" class="imagen-producto u-full-width" data-id="62">
                 <div class="info-card">
                     <h4>Curso de Comida Vegetariana</h4>
-                    <p>Juan Pedro</p>
+                    <p hidden>Juan Pgggggggggggggggggggggggg
+                        gfdddddddddddddddddddddddddddd
+                        ghghghghghghghghghghghghghghghghghghghgh
+                        dgffdddddddddddddddddddfffffffffffffffffffffff
+                        fffffffffffffffffffffedro</p>
                     <img src="<?= media();?>/images/estrellas.png">
                     <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
                     <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="62">Agregar Al Carrito</a>
@@ -245,7 +278,11 @@
                 <img src="<?= media();?>/images/curso3.jpg" class="imagen-producto u-full-width" data-id="63">
                 <div class="info-card">
                     <h4>Guitarra para Principiantes</h4>
-                    <p>Juan Pedro</p>
+                    <p hidden>Juan Pgggggggggggggggggggggggg
+                        gfdddddddddddddddddddddddddddd
+                        ghghghghghghghghghghghghghghghghghghghgh
+                        dgffdddddddddddddddddddfffffffffffffffffffffff
+                        fffffffffffffffffffffedro</p>
                     <img src="<?= media();?>/images/estrellas.png">
                     <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
                     <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="63">Agregar Al Carrito</a>

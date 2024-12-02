@@ -264,15 +264,22 @@ body {
     top: 50%;
     left: 57%;
     transform: translate(-50%, -50%);
-    background: #fff;
+    background: #064b50;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    width: 100%;
-    max-width: 1100px;
-    height: 550px;
+    width: 950px;
+    color: #ffffff;
+    max-width: 1000px;
+    height: 460px;
     z-index: 1000;
     display: none;
     padding: 20px;
+    
+}
+.imagen-detalles{
+    height: 320px;
+    width: 250px;
+    font-size: medium;
 }
 
 .detalles-producto.visible {

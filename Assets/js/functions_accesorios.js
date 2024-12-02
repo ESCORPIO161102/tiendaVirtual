@@ -8,49 +8,54 @@ const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
 let articulosCarrito = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-     const botonesDetalles = document.querySelectorAll('.detalles-producto');
-     const botonesCerrar = document.querySelectorAll('.close-accesorios');
-     const botonesAgregarCarrito = document.querySelectorAll('.agregar-carrito');
-     const imagenesProducto = document.querySelectorAll('.imagen-producto');
- 
-     imagenesProducto.forEach((imagen) => {
-         imagen.addEventListener('click', (e) => {
-             const productoId = e.target.dataset.id;
-             const detallesProducto = document.getElementById(`detallesProducto-${productoId}`);
- 
-             // Actualizamos los detalles del producto dinámicamente
-             const titulo = detallesProducto.querySelector(`#tituloProducto-${productoId}`);
-             const descripcion = detallesProducto.querySelector(`#descripcionProducto-${productoId}`);
-             const precio = detallesProducto.querySelector(`#precioProducto-${productoId}`);
-             const imagenProducto = detallesProducto.querySelector(`#imagenProducto-${productoId}`);
- 
-             titulo.textContent = `Producto ${productoId}`;
-             descripcion.textContent = `Descripción del producto ${productoId}`;
-             precio.textContent = `Precio: $${productoId * 100}`;
-             imagenProducto.src = e.target.src;
- 
-             detallesProducto.classList.remove('oculto');
-             detallesProducto.classList.add('visible');
-         });
-     });
- 
-     botonesCerrar.forEach((botonCerrar) => {
-         botonCerrar.addEventListener('click', (e) => {
-             const detallesProducto = e.target.closest('.detalles-producto');
-             detallesProducto.classList.remove('visible');
-             detallesProducto.classList.add('oculto');
-         });
-     });
- 
-     botonesAgregarCarrito.forEach((botonAgregar) => {
-         botonAgregar.addEventListener('click', (e) => {
-             const detallesProducto = e.target.closest('.detalles-producto');
-             detallesProducto.classList.remove('visible');
-             detallesProducto.classList.add('oculto');
-         });
-     });
- });
- 
+    const botonesDetalles = document.querySelectorAll('.detalles-producto');
+    const botonesCerrar = document.querySelectorAll('.close-accesorios');
+    const botonesAgregarCarrito = document.querySelectorAll('.agregar-carrito');
+    const imagenesProducto = document.querySelectorAll('.imagen-producto');
+
+    imagenesProducto.forEach((imagen) => {
+       imagen.addEventListener('click', (e) => {
+           const productoId = e.target.dataset.id;
+           const detallesProducto = document.getElementById(`detallesProducto-${productoId}`);
+   
+           // Extraer los datos del producto directamente del HTML
+           const tarjetaProducto = e.target.closest('.card');
+           const titulo = tarjetaProducto.querySelector('h4').textContent;
+           const descripcion = tarjetaProducto.querySelector('p').textContent;
+           const precio = tarjetaProducto.querySelector('.precio span').textContent;
+           const imagenSrc = e.target.src;
+   
+           // Actualizar los detalles del producto
+           detallesProducto.querySelector(`#tituloProducto-${productoId}`).textContent = titulo;
+           detallesProducto.querySelector(`#descripcionProducto-${productoId}`).textContent = descripcion;
+           detallesProducto.querySelector(`#precioProducto-${productoId}`).textContent = `Precio: ${precio}`;
+           detallesProducto.querySelector(`#imagenProducto-${productoId}`).src = imagenSrc;
+   
+           // Mostrar los detalles del producto
+           detallesProducto.classList.remove('oculto');
+           detallesProducto.classList.add('visible');
+       });
+   });
+   
+
+    botonesCerrar.forEach((botonCerrar) => {
+        botonCerrar.addEventListener('click', (e) => {
+            const detallesProducto = e.target.closest('.detalles-producto');
+            detallesProducto.classList.remove('visible');
+            detallesProducto.classList.add('oculto');
+        });
+    });
+
+    botonesAgregarCarrito.forEach((botonAgregar) => {
+        botonAgregar.addEventListener('click', (e) => {
+            const detallesProducto = e.target.closest('.detalles-producto');
+            detallesProducto.classList.remove('visible');
+            detallesProducto.classList.add('oculto');
+        });
+    });
+});
+
+
 
 
 

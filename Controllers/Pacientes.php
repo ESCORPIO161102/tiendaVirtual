@@ -8,9 +8,9 @@
 
 		public function Pacientes()
 		{
-			$data['page_tag'] = "Pacientes";
-			$data['page_title'] = "PACIENTES <small>Hospital Niño</small>";
-			$data['page_name'] = "pacientes";
+			$data['page_tag'] = "Registro Productos";
+			$data['page_title'] = "REGISTRO PRODUCTOS";
+			$data['page_name'] = "Registro Productos";
 			$data['page_functions_js'] = "functions_pacientes.js";
 			$this->views->getView($this,"pacientes",$data);
 		}
