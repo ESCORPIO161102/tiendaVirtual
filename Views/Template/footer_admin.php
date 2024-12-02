@@ -2,8 +2,7 @@
      <script src="<?= media(); ?>/js/alert.js"></script>
     <!--Fin Login-->
     <script src="<?= media(); ?>/js/functions_home.js"></script>
-    <script src="<?= media(); ?>/js/functions_productos.js"></script>
-    <script src="<?= media(); ?>/js/functions_accesorios.js"></script>
+   
     <script>
         const base_url = "<?= base_url(); ?>";
     </script>
