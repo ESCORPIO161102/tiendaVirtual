@@ -72,7 +72,7 @@
         <div id="detallesProducto-22" class="detalles-producto oculto">
             <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
             <div class="contenido-detalles">
-                <img id="imagenProducto-22" src="<?= media();?>/images/curso2.jpg" alt="Producto" class="imagen-detalles">
+                <img id="imagenProducto-22" src="<?= media();?>/images/curso2.jpg" alt="Producto" class="imagen-detalles" data-id="22">
                 <div class="info-detalles">
                     <h2 id="tituloProducto-22">Curso de Comida Vegetariana</h2>
                     <p id="descripcionProducto-22">Descripción del producto aquí.</p>
@@ -80,7 +80,7 @@
                 </div>
             </div>
             <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="22">Agregar Al Carrito</a>
-        </div>
+            </div>
 
         <!-- Producto 3 -->
         <div class="four columns">

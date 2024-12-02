@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
  * Funcion que cierra el modal
  */
 function closeModal() {
-    const btnClose = document.getElementById("close-modal");
+    const btnClose = document.querySelector("#close-modal");
     btnClose.addEventListener("click", () => {
     window.location.href = "http://localhost/tiendaVirtual/dashboard";
     })

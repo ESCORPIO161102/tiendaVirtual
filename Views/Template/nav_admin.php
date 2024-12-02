@@ -4,7 +4,7 @@
       <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="<?= media();?>/images/hospital.jpg" alt="User Image">
         <div>
             <br>
-        <h1 class="user-name"  style="font-size: 20px;">Rodriguez Fernandez Jose Jhon</h1
+       
           <p class="app-sidebar__user-designation">Administrador</p>
         </div>
       </div>

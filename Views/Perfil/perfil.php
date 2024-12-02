@@ -4,7 +4,8 @@
         <div class="model-content">
             <div class="modal-head">
                 <h2 class="h2">Perfil Usuario</h2>
-               <i class="fa-solid fa-square-xmark" id="close-modal" style="color: #cf0707;"></i>
+                <button class="btn-square-x" id="close-modal"></button>
+
             </div>
             <div class="modal-body">
                 <div class="profile-container">
