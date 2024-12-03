@@ -7,6 +7,17 @@ comprarBtn.addEventListener('click', realizarCompra);
 const vaciarCarritoBtn = document.querySelector('#vaciar-carrito'); 
 let articulosCarrito = [];
 
+document.querySelectorAll('.agregar-carrito').forEach(boton => {
+    boton.addEventListener('click', (e) => {
+        e.preventDefault();
+        const idProducto = e.target.getAttribute('data-id');
+        console.log(`Producto ${idProducto} agregado al carrito`);
+
+        // Quita el enfoque del botón después de hacer clic
+        e.target.blur();
+    });
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const botonesDetalles = document.querySelectorAll('.detalles-producto');
     const botonesCerrar = document.querySelectorAll('.close-accesorios');
@@ -14,28 +25,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const imagenesProducto = document.querySelectorAll('.imagen-producto');
 
     imagenesProducto.forEach((imagen) => {
-       imagen.addEventListener('click', (e) => {
-           const productoId = e.target.dataset.id;
-           const detallesProducto = document.getElementById(`detallesProducto-${productoId}`);
-   
-           // Extraer los datos del producto directamente del HTML
-           const tarjetaProducto = e.target.closest('.card');
-           const titulo = tarjetaProducto.querySelector('h4').textContent;
-           const descripcion = tarjetaProducto.querySelector('p').textContent;
-           const precio = tarjetaProducto.querySelector('.precio span').textContent;
-           const imagenSrc = e.target.src;
-   
-           // Actualizar los detalles del producto
-           detallesProducto.querySelector(`#tituloProducto-${productoId}`).textContent = titulo;
-           detallesProducto.querySelector(`#descripcionProducto-${productoId}`).textContent = descripcion;
-           detallesProducto.querySelector(`#precioProducto-${productoId}`).textContent = `Precio: ${precio}`;
-           detallesProducto.querySelector(`#imagenProducto-${productoId}`).src = imagenSrc;
-   
-           // Mostrar los detalles del producto
-           detallesProducto.classList.remove('oculto');
-           detallesProducto.classList.add('visible');
-       });
-   });
+        imagen.addEventListener('click', (e) => {
+            const productoId = e.target.dataset.id;
+            const detallesProducto = document.getElementById(`detallesProducto-${productoId}`);
+            const tarjetaProducto = e.target.closest('.card');
+    
+            // Extraer datos del producto
+            const titulo = tarjetaProducto.querySelector('h4').textContent;
+            const descripcion = tarjetaProducto.querySelector('p[hidden]').textContent;
+            const precio = tarjetaProducto.querySelector('.precio span').textContent;
+            const imagenSrc = e.target.src;
+    
+            // Actualizar detalles con datos correctos
+            detallesProducto.querySelector(`#tituloProducto-${productoId}`).textContent = titulo;
+            detallesProducto.querySelector(`#descripcionProducto-${productoId}`).textContent = descripcion;
+            detallesProducto.querySelector(`#precioProducto-${productoId}`).textContent = `Precio: ${precio}`;
+            detallesProducto.querySelector(`#imagenProducto-${productoId}`).src = imagenSrc;
+    
+            // Mostrar los detalles del producto
+            detallesProducto.classList.remove('oculto');
+            detallesProducto.classList.add('visible');
+        });
+    });
+    
    
 
     botonesCerrar.forEach((botonCerrar) => {
@@ -45,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detallesProducto.classList.add('oculto');
         });
     });
+    
 
     botonesAgregarCarrito.forEach((botonAgregar) => {
         botonAgregar.addEventListener('click', (e) => {
@@ -79,13 +92,14 @@ function cargarEventListeners() {
 // Función que añade el curso al carrito
 function agregarCurso(e) {
     e.preventDefault();
-    // Delegation para agregar-carrito
-    if(e.target.classList.contains('agregar-carrito')) {
-         const curso = e.target.parentElement.parentElement;
-         // Enviamos el curso seleccionado para tomar sus datos
-         leerDatosCurso(curso);
+    // Verifica si el botón tiene la clase 'agregar-carrito'
+    if (e.target.classList.contains('agregar-carrito')) {
+        const productoId = e.target.getAttribute('data-id');
+        const curso = document.querySelector(`.card .imagen-producto[data-id="${productoId}"]`).closest('.card');
+        leerDatosCurso(curso);
     }
 }
+
 
 // Seleccionar el botón "Comprar"
 

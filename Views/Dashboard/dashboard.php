@@ -16,293 +16,265 @@
                 <div id="lista-productos" class="container">
         <h1 id="encabezado" class="encabezado">Infortec Productos</h1>
         <div class="row">
-        <!-- Producto 1 -->
-<div class="four columns">
-    <div class="card">
-        <img src="<?= media();?>/images/2.jpg" class="imagen-producto u-full-width" data-id="44">
-        <div class="info-card" >
-            <h4>HTML5, CSS3, JavaScript para Principiantes</h4>
-            <p hidden>Jufsdagfdan Pedrohdgjcxdxxxxxxxxxxxxx
-                xxxxxxxxxxxxxxxxxxxxxxxxbvnnnnnnnnnn
-                nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
-                nnnnnnnnnnnn
-                nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
-                nnnnnnnnnnnnnn
-                nnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</p>
-            <img src="<?= media();?>/images/estrellas.png">
-            <p class="precio">$200 <span class="u-pull-right">$15</span></p>
-            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="44">Agregar Al Carrito</a>
-        </div>
-    </div>
-</div>
-
-       <!-- Detalles del producto 1 -->
-<div id="detallesProducto-44" class="detalles-producto oculto">
-    <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
-    <div class="contenido-detalles">
-        <img id="imagenProducto-44" src="<?= media();?>/images/2.jpg" alt="Producto" class="imagen-detalles">
-        <div class="info-detalles">
-            <h2 id="tituloProducto-44"></h2>
-            <p id="descripcionProducto-44"></p>
-            <p id="precioProducto-44"></p>
-        </div>
-    </div>
-    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="44">Agregar Al Carrito</a>
-</div>
-
-
-        <!-- Producto 2 -->
-        <div class="four columns">
-            <div class="card">
-                <img src="<?= media();?>/images/curso2.jpg" class="imagen-producto u-full-width" data-id="22">
+            
+            <!-- Producto 1 -->
+            <div class="four columns">
+              <div class="card">
+                <img src="<?= media();?>/images/2.jpg" class="imagen-producto u-full-width" data-id="007">
                 <div class="info-card">
-                    <h4>Curso de Comida Vegetariana</h4>
-                    <p hidden>JuanJuan Pgggggggggggggggggggggggg
-                        gfdddddddddddddddddddddddddddd
-                        ghghghghghghghghghghghghghghghghghghghgh
-                        dgffdddddddddddddddddddfffffffffffffffffffffff
-                        fffffffffffffffffffffedro Pedro</p>
-                    <img src="<?= media();?>/images/estrellas.png">
-                    <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
-                    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="22">Agregar Al Carrito</a>
+                  <h4>HTML5, CSS3, JavaScript para Principiantes</h4>
+                  <p hidden>Juan PJuan Pgggggggggggggggggggggggg</p>
+                  <img src="<?= media();?>/images/estrellas.png">
+                  <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+                  <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="007">Agregar Al Carrito</a>
                 </div>
-            </div>
-        </div>
-        <!-- Detalles del producto 2 -->
-        <div id="detallesProducto-22" class="detalles-producto oculto">
-            <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
-            <div class="contenido-detalles">
-                <img id="imagenProducto-22" src="<?= media();?>/images/curso2.jpg" alt="Producto" class="imagen-detalles" data-id="22">
-                <div class="info-detalles">
-                    <h2 id="tituloProducto-22">Curso de Comida Vegetariana</h2>
-                    <p id="descripcionProducto-22">Descripción del producto aquí.</p>
-                    <p id="precioProducto-22">Precio: $200.00</p>
-                </div>
-            </div>
-            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="22">Agregar Al Carrito</a>
+              </div>
             </div>
 
-        <!-- Producto 3 -->
-        <div class="four columns">
-            <div class="card">
-                <img src="<?= media();?>/images/curso3.jpg" class="imagen-producto u-full-width" data-id="33">
-                <div class="info-card">
-                    <h4>Guitarra para Principiantes</h4>
-                    <p hidden>Juan Pgggggggggggggggggggggggg
-                        gfdddddddddddddddddddddddddddd
-                        ghghghghghghghghghghghghghghghghghghghgh
-                        dgffdddddddddddddddddddfffffffffffffffffffffff
-                        fffffffffffffffffffffedro</p>
-                    <img src="<?= media();?>/images/estrellas.png">
-                    <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
-                    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="33">Agregar Al Carrito</a>
-                </div>
-            </div>
-        </div>
-        <!-- Detalles del producto 3 -->
-        <div id="detallesProducto-33" class="detalles-producto oculto">
-            <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
-            <div class="contenido-detalles">
-                <img id="imagenProducto-33" src="<?= media();?>/images/curso3.jpg" alt="Producto" class="imagen-detalles">
+            <!-- Detalles del producto 1 -->
+            <div id="detallesProducto-007" class="detalles-producto oculto">
+              <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
+              <div class="contenido-detalles">
+                <img id="imagenProducto-007" src="<?= media();?>/images/2.jpg" alt="Producto" class="imagen-detalles">
                 <div class="info-detalles">
-                    <h2 id="tituloProducto-33">Guitarra para Principiantes</h2>
-                    <p id="descripcionProducto-33">Descripción del producto aquí.</p>
-                    <p id="precioProducto-33">Precio: $200.00</p>
+                  <h2 id="tituloProducto-007"></h2>
+                  <p id="descripcionProducto-007"></p>
+                  <p id="precioProducto-007"></p>
                 </div>
+              </div>
+              <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="007">Agregar Al Carrito</a>
             </div>
-            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="33">Agregar Al Carrito</a>
-        </div>
-    </div>
 
-    <div class="row">
-        <!-- Producto 1 -->
-        <div class="four columns">
-            <div class="card">
-                <img src="<?= media();?>/images/2.jpg" class="imagen-producto u-full-width" data-id="111">
+            <!-- Producto 2 -->
+            <div class="four columns">
+              <div class="card">
+                <img src="<?= media();?>/images/curso2.jpg" class="imagen-producto u-full-width" data-id="008">
                 <div class="info-card">
-                    <h4>HTML5, CSS3, JavaScript para Principiantes</h4>
-                    <p hidden>Juan Pgggggggggggggggggggggggg
-                        gfdddddddddddddddddddddddddddd
-                        ghghghghghghghghghghghghghghghghghghghgh
-                        dgffdddddddddddddddddddfffffffffffffffffffffff
-                        fffffffffffffffffffffedro</p>
-                    <img src="<?= media();?>/images/estrellas.png">
-                    <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
-                    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="111">Agregar Al Carrito</a>
+                  <h4>Curso de Comida Vegetariana</h4>
+                  <p hidden>Juan Juan Pgggggggggggggggggggggggg</p>
+                  <img src="<?= media();?>/images/estrellas.png">
+                  <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+                  <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="008">Agregar Al Carrito</a>
                 </div>
+              </div>
             </div>
-        </div>
-        <!-- Detalles del producto 1 -->
-        <div id="detallesProducto-111" class="detalles-producto oculto">
-            <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
-            <div class="contenido-detalles">
-                <img id="imagenProducto-111" src="<?= media();?>/images/2.jpg" alt="Producto" class="imagen-detalles">
-                <div class="info-detalles">
-                    <h2 id="tituloProducto-111">HTML5, CSS3, JavaScript para Principiantes</h2>
-                    <p id="descripcionProducto-111">Descripción del producto aquí.</p>
-                    <p id="precioProducto-111">Precio: $200.00</p>
-                </div>
-            </div>
-            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="111">Agregar Al Carrito</a>
-        </div>
 
-        <!-- Producto 2 -->
-        <div class="four columns">
-            <div class="card">
-                <img src="<?= media();?>/images/curso2.jpg" class="imagen-producto u-full-width" data-id="222">
-                <div class="info-card">
-                    <h4>Curso de Comida Vegetariana</h4>
-                    <p hidden>Juan Pgggggggggggggggggggggggg
-                        gfdddddddddddddddddddddddddddd
-                        ghghghghghghghghghghghghghghghghghghghgh
-                        dgffdddddddddddddddddddfffffffffffffffffffffff
-                        fffffffffffffffffffffedro</p>
-                    <img src="<?= media();?>/images/estrellas.png">
-                    <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
-                    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="222">Agregar Al Carrito</a>
-                </div>
-            </div>
-        </div>
-        <!-- Detalles del producto 2 -->
-        <div id="detallesProducto-222" class="detalles-producto oculto">
-            <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
-            <div class="contenido-detalles">
-                <img id="imagenProducto-222" src="<?= media();?>/images/curso2.jpg" alt="Producto" class="imagen-detalles">
+            <!-- Detalles del producto 008 -->
+            <div id="detallesProducto-008" class="detalles-producto oculto">
+              <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
+              <div class="contenido-detalles">
+                <img id="imagenProducto-008" src="<?= media();?>/images/curso2.jpg" alt="Producto" class="imagen-detalles">
                 <div class="info-detalles">
-                    <h2 id="tituloProducto-222">Curso de Comida Vegetariana</h2>
-                    <p id="descripcionProducto-222">Descripción del producto aquí.</p>
-                    <p id="precioProducto-222">Precio: $200.00</p>
+                  <h2 id="tituloProducto-008">Curso de Comida Vegetariana</h2>
+                  <p id="descripcionProducto-008">Descripción del producto aquí.</p>
+                  <p id="precioProducto-008">Precio: $200.00</p>
                 </div>
+              </div>
+              <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="008">Agregar Al Carrito</a>
             </div>
-            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="222">Agregar Al Carrito</a>
-        </div>
 
-        <!-- Producto 3 -->
-        <div class="four columns">
-            <div class="card">
-                <img src="<?= media();?>/images/curso3.jpg" class="imagen-producto u-full-width" data-id="333">
+            <!-- Producto 3 -->
+            <div class="four columns">
+              <div class="card">
+                <img src="<?= media();?>/images/curso3.jpg" class="imagen-producto u-full-width" data-id="009">
                 <div class="info-card">
-                    <h4>Guitarra para Principiantes</h4>
-                    <p hidden>Juan Pgggggggggggggggggggggggg
-                        gfdddddddddddddddddddddddddddd
-                        ghghghghghghghghghghghghghghghghghghghgh
-                        dgffdddddddddddddddddddfffffffffffffffffffffff
-                        fffffffffffffffffffffedro</p>
-                    <img src="<?= media();?>/images/estrellas.png">
-                    <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
-                    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="333">Agregar Al Carrito</a>
+                  <h4>Guitarra para Principiantes</h4>
+                  <p hidden>JuaJuan Pgggggggggggggggggggggggg</p>
+                  <img src="<?= media();?>/images/estrellas.png">
+                  <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+                  <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="009">Agregar Al Carrito</a>
                 </div>
+              </div>
             </div>
-        </div>
-        <!-- Detalles del producto 3 -->
-        <div id="detallesProducto-333" class="detalles-producto oculto">
-            <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
-            <div class="contenido-detalles">
-                <img id="imagenProducto-333" src="<?= media();?>/images/curso3.jpg" alt="Producto" class="imagen-detalles">
-                <div class="info-detalles">
-                    <h2 id="tituloProducto-333">Guitarra para Principiantes</h2>
-                    <p id="descripcionProducto-333">Descripción del producto aquí.</p>
-                    <p id="precioProducto-333">Precio: $200.00</p>
-                </div>
-            </div>
-            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="333">Agregar Al Carrito</a>
-        </div>
-    </div>
 
-    <div class="row">
-        <!-- Producto 1 -->
-        <div class="four columns">
-            <div class="card">
-                <img src="<?= media();?>/images/2.jpg" class="imagen-producto u-full-width" data-id="61">
-                <div class="info-card">
-                    <h4>HTML5, CSS3, JavaScript para Principiantes</h4>
-                    <p hidden>Juan Pgggggggggggggggggggggggg
-                        gfdddddddddddddddddddddddddddd
-                        ghghghghghghghghghghghghghghghghghghghgh
-                        dgffdddddddddddddddddddfffffffffffffffffffffff
-                        fffffffffffffffffffffedro</p>
-                    <img src="<?= media();?>/images/estrellas.png">
-                    <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
-                    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="61">Agregar Al Carrito</a>
-                </div>
-            </div>
-        </div>
-        <!-- Detalles del producto 1 -->
-        <div id="detallesProducto-61" class="detalles-producto oculto">
-            <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
-            <div class="contenido-detalles">
-                <img id="imagenProducto-61" src="<?= media();?>/images/2.jpg" alt="Producto" class="imagen-detalles">
+            <!-- Detalles del producto 3 -->
+            <div id="detallesProducto-009" class="detalles-producto oculto">
+              <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
+              <div class="contenido-detalles">
+                <img id="imagenProducto-009" src="<?= media();?>/images/curso3.jpg" alt="Producto" class="imagen-detalles">
                 <div class="info-detalles">
-                    <h2 id="tituloProducto-61">HTML5, CSS3, JavaScript para Principiantes</h2>
-                    <p id="descripcionProducto-61">Descripción del producto aquí.</p>
-                    <p id="precioProducto-61">Precio: $200.00</p>
+                  <h2 id="tituloProducto-009">Guitarra para Principiantes</h2>
+                  <p id="descripcionProducto-009">Descripción del producto aquí.</p>
+                  <p id="precioProducto-009">Precio: $200.00</p>
                 </div>
+              </div>
+              <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="009">Agregar Al Carrito</a>
             </div>
-            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="61">Agregar Al Carrito</a>
-        </div>
+          </div>
 
-        <!-- Producto 2 -->
-        <div class="four columns">
-            <div class="card">
-                <img src="<?= media();?>/images/curso2.jpg" class="imagen-producto u-full-width" data-id="62">
+          <div class="row">
+            
+            <!-- Producto 1 -->
+            <div class="four columns">
+              <div class="card">
+                <img src="<?= media();?>/images/2.jpg" class="imagen-producto u-full-width" data-id="001">
                 <div class="info-card">
-                    <h4>Curso de Comida Vegetariana</h4>
-                    <p hidden>Juan Pgggggggggggggggggggggggg
-                        gfdddddddddddddddddddddddddddd
-                        ghghghghghghghghghghghghghghghghghghghgh
-                        dgffdddddddddddddddddddfffffffffffffffffffffff
-                        fffffffffffffffffffffedro</p>
-                    <img src="<?= media();?>/images/estrellas.png">
-                    <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
-                    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="62">Agregar Al Carrito</a>
+                  <h4>HTML5, CSS3, JavaScript para Principiantes</h4>
+                  <p hidden>Juan PJuan Pgggggggggggggggggggggggg</p>
+                  <img src="<?= media();?>/images/estrellas.png">
+                  <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+                  <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="001">Agregar Al Carrito</a>
                 </div>
+              </div>
             </div>
-        </div>
-        <!-- Detalles del producto 2 -->
-        <div id="detallesProducto-62" class="detalles-producto oculto">
-            <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
-            <div class="contenido-detalles">
-                <img id="imagenProducto-62" src="<?= media();?>/images/curso2.jpg" alt="Producto" class="imagen-detalles">
-                <div class="info-detalles">
-                    <h2 id="tituloProducto-62">Curso de Comida Vegetariana</h2>
-                    <p id="descripcionProducto-62">Descripción del producto aquí.</p>
-                    <p id="precioProducto-62">Precio: $200.00</p>
-                </div>
-            </div>
-            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="62">Agregar Al Carrito</a>
-        </div>
 
-        <!-- Producto 3 -->
-        <div class="four columns">
-            <div class="card">
-                <img src="<?= media();?>/images/curso3.jpg" class="imagen-producto u-full-width" data-id="63">
-                <div class="info-card">
-                    <h4>Guitarra para Principiantes</h4>
-                    <p hidden>Juan Pgggggggggggggggggggggggg
-                        gfdddddddddddddddddddddddddddd
-                        ghghghghghghghghghghghghghghghghghghghgh
-                        dgffdddddddddddddddddddfffffffffffffffffffffff
-                        fffffffffffffffffffffedro</p>
-                    <img src="<?= media();?>/images/estrellas.png">
-                    <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
-                    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="63">Agregar Al Carrito</a>
-                </div>
-            </div>
-        </div>
-        <!-- Detalles del producto 3 -->
-        <div id="detallesProducto-63" class="detalles-producto oculto">
-            <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
-            <div class="contenido-detalles">
-                <img id="imagenProducto-63" src="<?= media();?>/images/curso3.jpg" alt="Producto" class="imagen-detalles">
+            <!-- Detalles del producto 1 -->
+            <div id="detallesProducto-001" class="detalles-producto oculto">
+              <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
+              <div class="contenido-detalles">
+                <img id="imagenProducto-001" src="<?= media();?>/images/2.jpg" alt="Producto" class="imagen-detalles">
                 <div class="info-detalles">
-                    <h2 id="tituloProducto-63">Guitarra para Principiantes</h2>
-                    <p id="descripcionProducto-63">Descripción del producto aquí.</p>
-                    <p id="precioProducto-63">Precio: $200.00</p>
+                  <h2 id="tituloProducto-001"></h2>
+                  <p id="descripcionProducto-001"></p>
+                  <p id="precioProducto-001"></p>
                 </div>
+              </div>
+              <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="001">Agregar Al Carrito</a>
             </div>
-            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="63">Agregar Al Carrito</a>
-        </div>
-    </div>
+
+            <!-- Producto 2 -->
+            <div class="four columns">
+              <div class="card">
+                <img src="<?= media();?>/images/curso2.jpg" class="imagen-producto u-full-width" data-id="002">
+                <div class="info-card">
+                  <h4>Curso de Comida Vegetariana</h4>
+                  <p hidden>Juan Juan Pgggggggggggggggggggggggg</p>
+                  <img src="<?= media();?>/images/estrellas.png">
+                  <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+                  <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="002">Agregar Al Carrito</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Detalles del producto 2 -->
+            <div id="detallesProducto-002" class="detalles-producto oculto">
+              <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
+              <div class="contenido-detalles">
+                <img id="imagenProducto-002" src="<?= media();?>/images/curso2.jpg" alt="Producto" class="imagen-detalles">
+                <div class="info-detalles">
+                  <h2 id="tituloProducto-002">Curso de Comida Vegetariana</h2>
+                  <p id="descripcionProducto-002">Descripción del producto aquí.</p>
+                  <p id="precioProducto-002">Precio: $200.00</p>
+                </div>
+              </div>
+              <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="002">Agregar Al Carrito</a>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="four columns">
+              <div class="card">
+                <img src="<?= media();?>/images/curso3.jpg" class="imagen-producto u-full-width" data-id="003">
+                <div class="info-card">
+                  <h4>Guitarra para Principiantes</h4>
+                  <p hidden>JuaJuan Pgggggggggggggggggggggggg</p>
+                  <img src="<?= media();?>/images/estrellas.png">
+                  <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+                  <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="003">Agregar Al Carrito</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Detalles del producto 3 -->
+            <div id="detallesProducto-003" class="detalles-producto oculto">
+              <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
+              <div class="contenido-detalles">
+                <img id="imagenProducto-003" src="<?= media();?>/images/curso3.jpg" alt="Producto" class="imagen-detalles">
+                <div class="info-detalles">
+                  <h2 id="tituloProducto-003">Guitarra para Principiantes</h2>
+                  <p id="descripcionProducto-003">Descripción del producto aquí.</p>
+                  <p id="precioProducto-003">Precio: $200.00</p>
+                </div>
+              </div>
+              <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="003">Agregar Al Carrito</a>
+            </div>
+          </div>
+
+          <div class="row">
+            
+            <!-- Producto 1 -->
+            <div class="four columns">
+              <div class="card">
+                <img src="<?= media();?>/images/2.jpg" class="imagen-producto u-full-width" data-id="004">
+                <div class="info-card">
+                  <h4>HTML5, CSS3, JavaScript para Principiantes</h4>
+                  <p hidden>Juan PJuan Pgggggggggggggggggggggggg</p>
+                  <img src="<?= media();?>/images/estrellas.png">
+                  <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+                  <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="004">Agregar Al Carrito</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Detalles del producto 1 -->
+            <div id="detallesProducto-004" class="detalles-producto oculto">
+              <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
+              <div class="contenido-detalles">
+                <img id="imagenProducto-004" src="<?= media();?>/images/2.jpg" alt="Producto" class="imagen-detalles">
+                <div class="info-detalles">
+                  <h2 id="tituloProducto-004"></h2>
+                  <p id="descripcionProducto-004"></p>
+                  <p id="precioProducto-004"></p>
+                </div>
+              </div>
+              <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="004">Agregar Al Carrito</a>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="four columns">
+              <div class="card">
+                <img src="<?= media();?>/images/curso2.jpg" class="imagen-producto u-full-width" data-id="005">
+                <div class="info-card">
+                  <h4>Curso de Comida Vegetariana</h4>
+                  <p hidden>Juan Juan Pgggggggggggggggggggggggg</p>
+                  <img src="<?= media();?>/images/estrellas.png">
+                  <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+                  <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="005">Agregar Al Carrito</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Detalles del producto 2 -->
+            <div id="detallesProducto-005" class="detalles-producto oculto">
+              <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
+              <div class="contenido-detalles">
+                <img id="imagenProducto-005" src="<?= media();?>/images/curso2.jpg" alt="Producto" class="imagen-detalles">
+                <div class="info-detalles">
+                  <h2 id="tituloProducto-005">Curso de Comida Vegetariana</h2>
+                  <p id="descripcionProducto-005">Descripción del producto aquí.</p>
+                  <p id="precioProducto-005">Precio: $200.00</p>
+                </div>
+              </div>
+              <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="005">Agregar Al Carrito</a>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="four columns">
+              <div class="card">
+                <img src="<?= media();?>/images/curso3.jpg" class="imagen-producto u-full-width" data-id="006">
+                <div class="info-card">
+                  <h4>Guitarra para Principiantes</h4>
+                  <p hidden>JuaJuan Pgggggggggggggggggggggggg</p>
+                  <img src="<?= media();?>/images/estrellas.png">
+                  <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+                  <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="006">Agregar Al Carrito</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Detalles del producto 3 -->
+            <div id="detallesProducto-006" class="detalles-producto oculto">
+              <i class="fa-solid fa-square-xmark close-accesorios" style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
+              <div class="contenido-detalles">
+                <img id="imagenProducto-006" src="<?= media();?>/images/curso3.jpg" alt="Producto" class="imagen-detalles">
+                <div class="info-detalles">
+                  <h2 id="tituloProducto-006">Guitarra para Principiantes</h2>
+                  <p id="descripcionProducto-006">Descripción del producto aquí.</p>
+                  <p id="precioProducto-006">Precio: $200.00</p>
+                </div>
+              </div>
+              <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="006">Agregar Al Carrito</a>
+            </div>
+          </div>
     </div>  
     </div>
     </div>

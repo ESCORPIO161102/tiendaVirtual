@@ -374,6 +374,15 @@ body {
 .visible {
     display: block;
 }
+.agregar-carrito:active {
+    background-color: #f39c12; /* Color cuando el botón está presionado */
+}
+
+
+.agregar-carrito:focus {
+    outline: none; /* Elimina el borde por defecto */
+    background-color: initial; /* Opcional: vuelve al color original */
+}
 
 
 

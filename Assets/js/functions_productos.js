@@ -7,25 +7,37 @@ comprarBtn.addEventListener('click', realizarCompra);
 const vaciarCarritoBtn = document.querySelector('#vaciar-carrito'); 
 let articulosCarrito = [];
 
+document.querySelectorAll('.agregar-carrito').forEach(boton => {
+    boton.addEventListener('click', (e) => {
+        e.preventDefault();
+        const idProducto = e.target.getAttribute('data-id');
+        console.log(`Producto ${idProducto} agregado al carrito`);
+
+        // Quita el enfoque del botón después de hacer clic
+        e.target.blur();
+    });
+});
+
+
 document.addEventListener('DOMContentLoaded', () => {
-     const botonesDetalles = document.querySelectorAll('.detalles-producto');
-     const botonesCerrar = document.querySelectorAll('.close-accesorios');
-     const botonesAgregarCarrito = document.querySelectorAll('.agregar-carrito');
-     const imagenesProducto = document.querySelectorAll('.imagen-producto');
- 
-     imagenesProducto.forEach((imagen) => {
+    const botonesDetalles = document.querySelectorAll('.detalles-producto');
+    const botonesCerrar = document.querySelectorAll('.close-accesorios');
+    const botonesAgregarCarrito = document.querySelectorAll('.agregar-carrito');
+    const imagenesProducto = document.querySelectorAll('.imagen-producto');
+
+    imagenesProducto.forEach((imagen) => {
         imagen.addEventListener('click', (e) => {
             const productoId = e.target.dataset.id;
             const detallesProducto = document.getElementById(`detallesProducto-${productoId}`);
-    
-            // Extraer los datos del producto directamente del HTML
             const tarjetaProducto = e.target.closest('.card');
+    
+            // Extraer datos del producto
             const titulo = tarjetaProducto.querySelector('h4').textContent;
-            const descripcion = tarjetaProducto.querySelector('p').textContent;
+            const descripcion = tarjetaProducto.querySelector('p[hidden]').textContent;
             const precio = tarjetaProducto.querySelector('.precio span').textContent;
             const imagenSrc = e.target.src;
     
-            // Actualizar los detalles del producto
+            // Actualizar detalles con datos correctos
             detallesProducto.querySelector(`#tituloProducto-${productoId}`).textContent = titulo;
             detallesProducto.querySelector(`#descripcionProducto-${productoId}`).textContent = descripcion;
             detallesProducto.querySelector(`#precioProducto-${productoId}`).textContent = `Precio: ${precio}`;
@@ -37,24 +49,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
- 
-     botonesCerrar.forEach((botonCerrar) => {
-         botonCerrar.addEventListener('click', (e) => {
-             const detallesProducto = e.target.closest('.detalles-producto');
-             detallesProducto.classList.remove('visible');
-             detallesProducto.classList.add('oculto');
-         });
-     });
- 
-     botonesAgregarCarrito.forEach((botonAgregar) => {
-         botonAgregar.addEventListener('click', (e) => {
-             const detallesProducto = e.target.closest('.detalles-producto');
-             detallesProducto.classList.remove('visible');
-             detallesProducto.classList.add('oculto');
-         });
-     });
- });
- 
+   
+
+    botonesCerrar.forEach((botonCerrar) => {
+        botonCerrar.addEventListener('click', (e) => {
+            const detallesProducto = e.target.closest('.detalles-producto');
+            detallesProducto.classList.remove('visible');
+            detallesProducto.classList.add('oculto');
+        });
+    });
+    
+
+    botonesAgregarCarrito.forEach((botonAgregar) => {
+        botonAgregar.addEventListener('click', (e) => {
+            const detallesProducto = e.target.closest('.detalles-producto');
+            detallesProducto.classList.remove('visible');
+            detallesProducto.classList.add('oculto');
+        });
+    });
+});
+
+
 
 
 
@@ -78,13 +93,14 @@ function cargarEventListeners() {
 // Función que añade el curso al carrito
 function agregarCurso(e) {
     e.preventDefault();
-    // Delegation para agregar-carrito
-    if(e.target.classList.contains('agregar-carrito')) {
-         const curso = e.target.parentElement.parentElement;
-         // Enviamos el curso seleccionado para tomar sus datos
-         leerDatosCurso(curso);
+    // Verifica si el botón tiene la clase 'agregar-carrito'
+    if (e.target.classList.contains('agregar-carrito')) {
+        const productoId = e.target.getAttribute('data-id');
+        const curso = document.querySelector(`.card .imagen-producto[data-id="${productoId}"]`).closest('.card');
+        leerDatosCurso(curso);
     }
 }
+
 
 // Seleccionar el botón "Comprar"
 
