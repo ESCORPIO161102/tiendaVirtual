@@ -1,24 +1,25 @@
-var tableUsuarios;
+var tableProductos;
 document.addEventListener('DOMContentLoaded', function(){
 
-    tableUsuarios = $('#tableUsuarios').dataTable( {
+    tableProductos = $('#tableProductos').dataTable( {
         "aProcessing":true,
         "aServerSide":true,
         "language": {
             "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
         },
         "ajax":{
-            "url": " "+base_url+"/Pacientes/getUsuarios",
+            "url": " "+base_url+"/Registro/getProductos",
             "dataSrc":""
         },
         "columns":[
-            {"data":"idpersona"},
-            {"data":"nombres"},
-            {"data":"apellidos"},
-            {"data":"motivo"},
-            {"data":"email_user"},
-            {"data":"telefono"},
-            {"data":"nombrerol"},
+            {"data":"idproducto"},
+            {"data":"codigo"},
+            {"data":"nombre_producto"},
+            {"data":"especificaciones"},
+            {"data":"color"},
+            {"data":"precio"},
+            {"data":"fecha_registro"},
+            {"data":"categoria"},
             {"data":"status"},
             {"data":"options"}
         ],
@@ -52,19 +53,19 @@ document.addEventListener('DOMContentLoaded', function(){
         "order":[[0,"desc"]]  
     });
 
-    var formUsuario = document.querySelector("#formUsuario");
-    formUsuario.onsubmit = function(e) {
+    var formProducto = document.querySelector("#formProducto");
+    formProducto.onsubmit = function(e) {
         e.preventDefault();
-        var strIdentificacion = document.querySelector('#txtIdentificacion').value;
-        var strMotivo = document.querySelector('#txtMotivo').value;
+        var strCodigo = document.querySelector('#txtCodigo').value;
+        var strColor = document.querySelector('#txtColor').value;
         var strNombre = document.querySelector('#txtNombre').value;
-        var strApellido = document.querySelector('#txtApellido').value;
-        var strEmail = document.querySelector('#txtEmail').value;
-        var intTelefono = document.querySelector('#txtTelefono').value;
-        var intTipousuario = document.querySelector('#listRolid').value;
-        var strPassword = document.querySelector('#txtPassword').value;
+        var strEspecificacion = document.querySelector('#txtEspecificacion').value;
+        var floatPrecio = document.querySelector('#txtPrecio').value;
+        var intCategoria = document.querySelector('#listCategoria').value;
+        var strFecha = document.querySelector('#txtFecha').value;
 
-        if(strIdentificacion == '' || strApellido == '' || strNombre == '' || strMotivo == '' || strEmail == '' || intTelefono == '' || intTipousuario == '')
+
+        if(strCodigo == '' || strColor == '' || strNombre == '' || strEspecificacion == '' || floatPrecio == '' || intCategoria == '' || strFecha == '')
         {
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
@@ -79,8 +80,8 @@ document.addEventListener('DOMContentLoaded', function(){
         } 
 
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = base_url+'/Pacientes/setUsuario'; 
-        var formData = new FormData(formUsuario);
+        var ajaxUrl = base_url+'/Registro/setProducto'; 
+        var formData = new FormData(formProducto);
         request.open("POST",ajaxUrl,true);
         request.send(formData);
         request.onreadystatechange = function(){
@@ -88,10 +89,10 @@ document.addEventListener('DOMContentLoaded', function(){
                 var objData = JSON.parse(request.responseText);
                 if(objData.status)
                 {
-                    $('#modalFormUsuario').modal("hide");
-                    formUsuario.reset();
-                    swal("Usuarios", objData.msg ,"success");
-                    tableUsuarios.api().ajax.reload();
+                    $('#modalFormProducto').modal("hide");
+                    formProducto.reset();
+                    swal("Productos", objData.msg ,"success");
+                    tableProductos.api().ajax.reload();
                 }else{
                     swal("Error", objData.msg , "error");
                 }
@@ -102,33 +103,11 @@ document.addEventListener('DOMContentLoaded', function(){
 }, false);
 
 
-window.addEventListener('load', function() {
-        fntRolesUsuario();
-        /*fntViewUsuario();
-        fntEditUsuario();
-        fntDelUsuario();*/
-}, false);
 
-function fntRolesUsuario(){
-    var ajaxUrl = base_url+'/Roles/getSelectRoles';
+function fntViewUsuario(idproducto){
+    var idproducto = idproducto;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    request.open("GET",ajaxUrl,true);
-    request.send();
-
-    request.onreadystatechange = function(){
-        if(request.readyState == 4 && request.status == 200){
-            document.querySelector('#listRolid').innerHTML = request.responseText;
-            document.querySelector('#listRolid').value = 1;
-            $('#listRolid').selectpicker('render');
-        }
-    }
-    
-}
-
-function fntViewUsuario(idpersona){
-    var idpersona = idpersona;
-    var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    var ajaxUrl = base_url+'/Pacientes/getUsuario/'+idpersona;
+    var ajaxUrl = base_url+'/Registro/getProducto/'+idproducto;
     request.open("GET",ajaxUrl,true);
     request.send();
     request.onreadystatechange = function(){
@@ -163,15 +142,14 @@ function fntViewUsuario(idpersona){
                         break;
                 }
             
-                document.querySelector("#celIdentificacion").innerHTML = objData.data.identificacion;
-                document.querySelector("#celMotivo").innerHTML = objData.data.motivo;
-                document.querySelector("#celNombre").innerHTML = objData.data.nombres;
-                document.querySelector("#celApellido").innerHTML = objData.data.apellidos;
-                document.querySelector("#celTelefono").innerHTML = objData.data.telefono;
-                document.querySelector("#celEmail").innerHTML = objData.data.email_user;
-                document.querySelector("#celTipoUsuario").innerHTML = objData.data.nombrerol;
-                document.querySelector("#celEstado").innerHTML = estadoUsuario;
+                document.querySelector("#celCodigo").innerHTML = objData.data.codigo;
+                document.querySelector("#celColor").innerHTML = objData.data.color;
+                document.querySelector("#celNombre").innerHTML = objData.data.nombre_producto;
+                document.querySelector("#celEspecificacion").innerHTML = objData.data.especificaciones;
+                document.querySelector("#celPrecio").innerHTML = objData.data.precio;
+                document.querySelector("#celCategoria").innerHTML = objData.data.categoria;
                 document.querySelector("#celFechaRegistro").innerHTML = objData.data.fechaRegistro; 
+                document.querySelector("#celEstado").innerHTML = estadoProducto;
                 $('#modalViewUser').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
@@ -181,15 +159,15 @@ function fntViewUsuario(idpersona){
 }
 //SSSSSSSSSSS
 
-function fntEditUsuario(idpersona){
-    document.querySelector('#titleModal').innerHTML ="Actualizar Usuario";
+function fntEditUsuario(idproducto){
+    document.querySelector('#titleModal').innerHTML ="Actualizar Producto";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
     document.querySelector('#btnText').innerHTML ="Actualizar";
 
-    var idpersona =idpersona;
+    var idproducto =idproducto;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    var ajaxUrl = base_url+'/Pacientes/getUsuario/'+idpersona;
+    var ajaxUrl = base_url+'/PRoductosRe/getProducto/'+idproducto;
     request.open("GET",ajaxUrl,true);
     request.send();
     request.onreadystatechange = function(){
@@ -199,15 +177,14 @@ function fntEditUsuario(idpersona){
 
             if(objData.status)
             {
-                document.querySelector("#idUsuario").value = objData.data.idpersona;
-                document.querySelector("#txtIdentificacion").value = objData.data.identificacion;
-                document.querySelector("#txtMotivo").value = objData.data.motivo;
-                document.querySelector("#txtNombre").value = objData.data.nombres;
-                document.querySelector("#txtApellido").value = objData.data.apellidos;
-                document.querySelector("#txtTelefono").value = objData.data.telefono;
-                document.querySelector("#txtEmail").value = objData.data.email_user;
-                document.querySelector("#listRolid").value =objData.data.idrol;
-                $('#listRolid').selectpicker('render');
+                document.querySelector("#idProducto").value = objData.data.idproducto;
+                document.querySelector("#txtCodigo").value = objData.data.codigo;
+                document.querySelector("#txtColor").value = objData.data.color;
+                document.querySelector("#txtNombre").value = objData.data.nombre_producto;
+                document.querySelector("#txtEspecificacion").value = objData.data.especificacion;
+                document.querySelector("#txtPrecio").value = objData.data.precio;
+                document.querySelector("#txtCategoria").value = objData.data.categoria;
+                document.querySelector("#txtFecha").value = objData.data.fecha_registro;
 
                 if(objData.data.status == 1){
                     document.querySelector("#listStatus").value = 1;
@@ -218,16 +195,16 @@ function fntEditUsuario(idpersona){
             }
         }
     
-        $('#modalFormUsuario').modal('show');
+        $('#modalFormProducto').modal('show');
     }
 }
 
-function fntDelUsuario(idpersona){
+function fntDelUsuario(idproducto){
 
-    var idUsuario = idpersona;
+    var idProducto = idproducto;
     swal({
-        title: "Eliminar Usuario",
-        text: "¿Realmente quiere eliminar el Usuario?",
+        title: "Eliminar Producto",
+        text: "¿Realmente quiere eliminar el Producto?",
         type: "warning",
         showCancelButton: true,
         confirmButtonText: "Si, eliminar!",
@@ -239,8 +216,8 @@ function fntDelUsuario(idpersona){
         if (isConfirm) 
         {
             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            var ajaxUrl = base_url+'/Pacientes/delUsuario';
-            var strData = "idUsuario="+idUsuario;
+            var ajaxUrl = base_url+'/Registro/delProducto';
+            var strData = "idProducto="+idProducto;
             request.open("POST",ajaxUrl,true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             request.send(strData);
@@ -250,7 +227,7 @@ function fntDelUsuario(idpersona){
                     if(objData.status)
                     {
                         swal("Eliminar!", objData.msg , "success");
-                        tableUsuarios.api().ajax.reload(function(){
+                        tableProductos.api().ajax.reload(function(){
                             $('#modalFormUsuario').modal('hide');
                         });
                     }else{
@@ -267,11 +244,11 @@ function fntDelUsuario(idpersona){
 
 function openModal()
 {
-    document.querySelector('#idUsuario').value ="";
+    document.querySelector('#idProducto').value ="";
     document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
     document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
     document.querySelector('#btnText').innerHTML ="Guardar";
-    document.querySelector('#titleModal').innerHTML = "Nuevo Paciente";
-    document.querySelector("#formUsuario").reset();
-    $('#modalFormUsuario').modal('show');
+    document.querySelector('#titleModal').innerHTML = "Nuevo Producto";
+    document.querySelector("#formProducto").reset();
+    $('#modalFormProducto').modal('show');
 }

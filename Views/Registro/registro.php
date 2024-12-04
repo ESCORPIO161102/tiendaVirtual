@@ -1,6 +1,6 @@
 <?php 
     headerAdmin($data); 
-    getModal('modalPacientes',$data);
+    getModal('modalProductosRe',$data);
 ?>
     <main class="app-content">
       <div class="app-title">
@@ -11,7 +11,7 @@
         </div>
         <ul class="app-breadcrumb breadcrumb">
           <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-          <li class="breadcrumb-item"><a href="<?= base_url(); ?>/pacientes"><?= $data['page_title'] ?></a></li>
+          <li class="breadcrumb-item"><a href="<?= base_url(); ?>/registro"><?= $data['page_title'] ?></a></li>
         </ul>
       </div>
         <div class="row">
@@ -19,29 +19,29 @@
               <div class="tile">
                 <div class="tile-body">
                   <div class="table-responsive">
-                    <table class="table table-hover table-bordered" id="tableUsuarios">
+                    <table class="table table-hover table-bordered" id="tableProductos">
                       <thead>
                         <tr>
                           <th>ID</th>
-                          <th>Nombres</th>
-                          <th>Apellidos</th>
-                          <th>Motivo de Atencion</th>
-                          <th>Email</th>
-                          <th>Teléfono</th>
-                          <th>Rol</th>
-                          <th>Status</th>
+                          <th>Codigo</th>
+                          <th>Nombre Producto</th>
+                          <th>Especificaciones</th>
+                          <th>Color</th>
+                          <th>Precio</th>
+                          <th>Fecha Registro</th>
+                          <th>Categoria</th>
                           <th>Acciones</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <td>1</td>
-                          <td>Carlos</td>
+                          <td>654169</td>
                           <td>Henández</td>
-                          <td>Dolor de cabeza</td>
-                          <td>carlos@info.com</td>
-                          <td>78542155</td>
-                          <td>Administrador</td>
+                          <td>ram 4 gb</td>
+                          <td>verde oscuro</td>
+                          <td>550</td>
+                          <td>02-12-2024</td>
                           <td>Activo</td>
                           <td></td>
                         </tr>

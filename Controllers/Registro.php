@@ -1,64 +1,59 @@
 <?php 
 
-	class Pacientes extends Controllers{
+	class Registro extends Controllers{
 		public function __construct()
 		{
 			parent::__construct();
 		}
 
-		public function Pacientes()
+		public function Registro()
 		{
 			$data['page_tag'] = "Registro Productos";
 			$data['page_title'] = "REGISTRO PRODUCTOS";
 			$data['page_name'] = "Registro Productos";
-			$data['page_functions_js'] = "functions_pacientes.js";
-			$this->views->getView($this,"pacientes",$data);
+			$data['page_functions_js'] = "functions_RegistroProductos.js";
+			$this->views->getView($this,"registro",$data);
 		}
 
-		public function setUsuario(){
+		public function setProducto(){
 			if($_POST){
 				
-				if(empty($_POST['txtIdentificacion']) || empty($_POST['txtMotivo']) || empty($_POST['txtNombre']) || empty($_POST['txtApellido']) ||  empty($_POST['txtTelefono']) || empty($_POST['txtEmail']) || empty($_POST['listRolid']) || empty($_POST['listStatus']) )
+				if(empty($_POST['txtCodigo']) || empty($_POST['txtColor']) || empty($_POST['txtNombre']) || empty($_POST['txtEspecificaciones']) ||  empty($_POST['txtPrecio']) || empty($_POST['listCategoria']) || empty($_POST['txtFecha']) || empty($_POST['listStatus']) )
 				{
 					$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
 				}else{ 
-					$idUsuario = intval($_POST['idUsuario']);
-					$strIdentificacion = strClean($_POST['txtIdentificacion']);
-					$strMotivo = ucwords( strClean($_POST['txtMotivo']));
+					$idProducto = intval($_POST['idProducto']);
+					$strCodigo = intval(strClean($_POST['txtCodigo']));
+					$strColor = ucwords( strClean($_POST['txtColor']));
 					$strNombre = ucwords(strClean($_POST['txtNombre']));
-					$strApellido = ucwords(strClean($_POST['txtApellido']));
-					$intTelefono = intval(strClean($_POST['txtTelefono']));
-					$strEmail = strtolower(strClean($_POST['txtEmail']));
-					$intTipoId = intval(strClean($_POST['listRolid']));
+					$strEspecificacion = ucwords(strClean($_POST['txtEspecificaciones']));
+					$floatPrecio = intval(strClean($_POST['txtPrecio']));
+					$strFecha = strtolower(strClean($_POST['txtFecha']));
+					$intCategoria = intval(strClean($_POST['listCategoria']));
 					$intStatus = intval(strClean($_POST['listStatus']));
 
-					if($idUsuario == 0)
+					if($idProducto == 0)
 					{
 						$option = 1;
-						$strPassword =  empty($_POST['txtPassword']) ? hash("SHA256",passGenerator()) : hash("SHA256",$_POST['txtPassword']);
-						$request_user = $this->model->insertUsuario($strIdentificacion,
-																$strMotivo,
+						$request_user = $this->model->insertProducto($strCodigo,
+																$strColor,
 																$strNombre, 
-																$strApellido,
-																$intTelefono, 
-																$strEmail,
-																$strPassword, 
-																$intTipoId, 
+																$strEspecificacion,
+																$floatPrecio, 
+																$strFecha,
+																$intCategoria, 
 																$intStatus );
 					}else{
 						$option = 2;
-						$strPassword =  empty($_POST['txtPassword']) ? "" : hash("SHA256",$_POST['txtPassword']);
-						$request_user = $this->model->updateUsuario($idUsuario,
-														$strIdentificacion, 
-														$strNombre,
-														$strApellido,
-														$strMotivo,
-														$intTelefono, 
-														$strEmail,
-														$strPassword, 
-														$intTipoId, 
-														$intStatus);
-
+						$request_user = $this->model->updateProducto($idProducto,
+						$strCodigo,
+						$strColor,
+						$strNombre, 
+						$strEspecificacion,
+						$floatPrecio, 
+						$strFecha,
+						$intCategoria, 
+						$intStatus );
 					}
 
 					if($request_user > 0 )
@@ -79,9 +74,9 @@
 			die();
 		}
 
-		public function getUsuarios()
+		public function getProductos()
 {
-    $arrData = $this->model->selectUsuarios();
+    $arrData = $this->model->selectProductos();
     for ($i = 0; $i < count($arrData); $i++) {
 
         switch ($arrData[$i]['status']) {
@@ -118,12 +113,12 @@
     die();
 }
 
-		public function getUsuario(int $idpersona){
+		public function getProducto(int $idpersona){
 			
 			$idusuario = intval($idpersona);
 			if($idusuario > 0)
 			{
-				$arrData = $this->model->selectUsuario($idusuario);
+				$arrData = $this->model->selectProducto($idusuario);
 				if(empty($arrData))
 				{
 					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
@@ -136,11 +131,11 @@
 			die();
 		}
 
-		public function delUsuario()
+		public function delProducto()
 		{
 			if($_POST){
-				$intIdpersona = intval($_POST['idUsuario']);
-				$requestDelete = $this->model->deleteUsuario($intIdpersona);
+				$intIdproducto = intval($_POST['idProducto']);
+				$requestDelete = $this->model->deleteProducto($intIdproducto);
 				if($requestDelete)
 				{
 					$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el usuario');
