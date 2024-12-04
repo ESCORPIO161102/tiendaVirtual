@@ -15,7 +15,7 @@
 
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="txtIdentificacion">Codigo</label>
+                  <label for="txtCodigo">Codigo</label>
                   <input type="text" class="form-control" id="txtCodigo" name="txtCodigo" required="">
                 </div>
                 <div class="form-group col-md-6">
@@ -39,15 +39,11 @@
                   <input type="number" class="form-control" id="txtPrecio" name="txtPrecio"  step="0.50" min="0" max="1000000" required="">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="listCategoria">Categoria</label>
-                    <select class="form-control selectpicker" id="listCategoria" name="listCategoria" required >
-                        <option value="1">Paciente</option>
-                        <option value="2">Inactivo</option>
-                        <option value="3">Hozpitalizado (UCI)</option>
-                        <option value="4">Dado de Alta</option>
-                        <option value="5">Salud Crítica</option>
-                        <option value="6">Fallecido</option>
-                        <option value="7">Hozpitalizado</option>
+                  <label for="txtCategoria">Categoria</label>
+                  <select name="txtCategoria" id="txtCategoria" class="form-control valid validText" required="">
+                    <option value="" disabled selected>Seleccione una opcion</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
                     </select>
                 </div>
              </div>

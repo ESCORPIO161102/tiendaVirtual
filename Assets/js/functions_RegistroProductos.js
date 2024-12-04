@@ -61,11 +61,11 @@ document.addEventListener('DOMContentLoaded', function(){
         var strNombre = document.querySelector('#txtNombre').value;
         var strEspecificacion = document.querySelector('#txtEspecificacion').value;
         var floatPrecio = document.querySelector('#txtPrecio').value;
-        var intCategoria = document.querySelector('#listCategoria').value;
+        var strCategoria = document.querySelector('#txtCategoria').value;
         var strFecha = document.querySelector('#txtFecha').value;
 
 
-        if(strCodigo == '' || strColor == '' || strNombre == '' || strEspecificacion == '' || floatPrecio == '' || intCategoria == '' || strFecha == '')
+        if(strCodigo == '' || strColor == '' || strNombre == '' || strEspecificacion == '' || floatPrecio == '' || strCategoria == '' || strFecha == '')
         {
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
@@ -115,30 +115,30 @@ function fntViewUsuario(idproducto){
             var objData = JSON.parse(request.responseText);
 
             if (objData.status) {
-                let estadoUsuario = "";
+                let estadoProducto = "";
             
                 // Determinamos el estado del usuario con un switch
                 switch (objData.data.status) {
                     case 1:
-                        estadoUsuario = '<span class="badge badge-success">Paciente</span>';
+                        estadoProducto = '<span class="badge badge-success">Paciente</span>';
                         break;
                     case 2:
-                        estadoUsuario = '<span class="badge badge-danger">Inactivo</span>';
+                        estadoProducto = '<span class="badge badge-danger">Inactivo</span>';
                         break;
                     case 3:
-                        estadoUsuario = '<span class="badge badge-info">Hozpitalizado (UCI)</span>';
+                        estadoProducto = '<span class="badge badge-info">Hozpitalizado (UCI)</span>';
                         break;
                     case 4:
-                        estadoUsuario = '<span class="badge badge-warning">Dado de Alta</span>';
+                        estadoProducto = '<span class="badge badge-warning">Dado de Alta</span>';
                         break;
                     case 5:
-                        estadoUsuario = '<span class="badge badge-primary">Salud Crítica</span>';
+                        estadoProducto = '<span class="badge badge-primary">Salud Crítica</span>';
                         break;
                     case 6:
-                        estadoUsuario = '<span class="badge badge-dark">Fallecido</span>';
+                        estadoProducto = '<span class="badge badge-dark">Fallecido</span>';
                         break;
                     case 7:
-                        estadoUsuario = '<span class="badge badge-secondary">Hozpitalizado</span>';
+                        estadoProducto = '<span class="badge badge-secondary">Hozpitalizado</span>';
                         break;
                 }
             

@@ -18,7 +18,7 @@
 		public function setProducto(){
 			if($_POST){
 				
-				if(empty($_POST['txtCodigo']) || empty($_POST['txtColor']) || empty($_POST['txtNombre']) || empty($_POST['txtEspecificaciones']) ||  empty($_POST['txtPrecio']) || empty($_POST['listCategoria']) || empty($_POST['txtFecha']) || empty($_POST['listStatus']) )
+				if(empty($_POST['txtCodigo']) || empty($_POST['txtColor']) || empty($_POST['txtNombre']) || empty($_POST['txtEspecificaciones']) ||  empty($_POST['txtPrecio']) || empty($_POST['txtCategoria']) || empty($_POST['txtFecha']) || empty($_POST['listStatus']) )
 				{
 					$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
 				}else{ 
@@ -29,7 +29,7 @@
 					$strEspecificacion = ucwords(strClean($_POST['txtEspecificaciones']));
 					$floatPrecio = intval(strClean($_POST['txtPrecio']));
 					$strFecha = strtolower(strClean($_POST['txtFecha']));
-					$intCategoria = intval(strClean($_POST['listCategoria']));
+					$strCategoria = ucwords(strClean($_POST['txtCategoria']));
 					$intStatus = intval(strClean($_POST['listStatus']));
 
 					if($idProducto == 0)
@@ -41,7 +41,7 @@
 																$strEspecificacion,
 																$floatPrecio, 
 																$strFecha,
-																$intCategoria, 
+																$strCategoria, 
 																$intStatus );
 					}else{
 						$option = 2;
@@ -52,7 +52,7 @@
 						$strEspecificacion,
 						$floatPrecio, 
 						$strFecha,
-						$intCategoria, 
+						$strCategoria, 
 						$intStatus );
 					}
 
@@ -113,12 +113,12 @@
     die();
 }
 
-		public function getProducto(int $idpersona){
+		public function getProducto(int $idproducto){
 			
-			$idusuario = intval($idpersona);
-			if($idusuario > 0)
+			$idproducto = intval($idproducto);
+			if($idproducto > 0)
 			{
-				$arrData = $this->model->selectProducto($idusuario);
+				$arrData = $this->model->selectProducto($idproducto);
 				if(empty($arrData))
 				{
 					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
