@@ -71,7 +71,7 @@
 			return $request;
 		}
 
-		public function updateUsuario( int $idProducto, int $codigo, string $color,string $nombre, string $especificacion, int $precio, string $fecha, string $categoria, int $status){
+		public function updateProducto( int $idProducto, int $codigo, string $color,string $nombre, string $especificacion, float $precio, string $fecha, string $categoria, int $status){
 
 			$this->intIdProducto = $idProducto;
 			$this->intCodigo = $codigo;

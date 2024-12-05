@@ -30,11 +30,11 @@
         <h2>Crear Usuario</h2>
         <form class="login-form" id="formSave" autocomplete="off">
             <label for="txtUserName">Usuario</label>
-            <input type="text" id="txtUserName" name="txtUserName" required placeholder="Ingresa tu usuario">
+            <input type="text" id="txtUserName" name="txtUserName" required placeholder="Ingresa tu usuario" autocomplete="off">
             <label for="txtPassword1">Contraseña</label>
-            <input type="password" id="txtPassword1" name="txtPassword1" required placeholder="Ingresa tu contraseña">
+            <input type="password" id="txtPassword1" name="txtPassword1" required placeholder="Ingresa tu contraseña" autocomplete="off">
             <label for="txtPassword2">Confirme su contraseña</label>
-            <input type="password" id="txtPassword2" name="txtPassword2" required placeholder="Ingresa tu contraseña">
+            <input type="password" id="txtPassword2" name="txtPassword2" required placeholder="Ingresa tu contraseña" autocomplete="off">
             <button type="submit">Crear Usuario</button>
         </form>
         <div class="foot-new-user">

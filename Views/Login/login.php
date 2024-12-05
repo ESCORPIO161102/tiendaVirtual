@@ -26,9 +26,9 @@
         <h2>Iniciar Sesion</h2>
         <form class="login-form" id="login-form" autocomplete="off">
             <label for="username">Usuario</label>
-            <input type="text" id="username" name="username" required placeholder="Ingresa tu usuario">
+            <input type="text" id="username" name="username" required placeholder="Ingresa tu usuario" autocomplete="off">
             <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" required placeholder="Ingresa tu contraseña">
+            <input type="password" id="password" name="password" required placeholder="Ingresa tu contraseña" autocomplete="off">
             <button type="submit">Iniciar Sesion</button>
         </form>
         <div class="foot-new-user">
