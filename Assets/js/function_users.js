@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //Mostrar el modal de registro de tareas
     setTimeout(() => {
         saveUser();
-        loadingScreen.classList.add("hidden");
+        // loadingScreen.classList.add("hidden");
     }, 1000);
 });
 

@@ -5,7 +5,7 @@
 		{
 			parent::__construct();
 		}
-
+		//carga la vista de la pagina principal
 		public function Producto()
 		{
 			$data['page_tag'] = "Registro Productos";
@@ -14,7 +14,7 @@
 			$data['page_functions_js'] = "functions_RegistroProductos.js";
 			$this->views->getView($this,"producto",$data);
 		}
-
+		//funciones 
 		public function setProducto(){
 			if($_POST){
 				
