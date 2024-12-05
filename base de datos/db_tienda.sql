@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-11-2024 a las 21:33:35
+-- Tiempo de generación: 05-12-2024 a las 21:53:15
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `db_hospital_niño`
+-- Base de datos: `db_tienda`
 --
 
 -- --------------------------------------------------------
@@ -114,40 +114,6 @@ INSERT INTO `modulo` (`idmodulo`, `titulo`, `descripcion`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pacientes`
---
-
-CREATE TABLE `pacientes` (
-  `idpersona` bigint(20) NOT NULL,
-  `identificacion` varchar(30) NOT NULL,
-  `nombres` varchar(80) NOT NULL,
-  `apellidos` varchar(100) NOT NULL,
-  `motivo` varchar(30) NOT NULL,
-  `telefono` bigint(20) NOT NULL,
-  `email_user` varchar(100) NOT NULL,
-  `password` varchar(25) NOT NULL,
-  `token` varchar(80) NOT NULL,
-  `rolid` bigint(20) NOT NULL,
-  `datecreated` datetime NOT NULL DEFAULT current_timestamp(),
-  `status` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `pacientes`
---
-
-INSERT INTO `pacientes` (`idpersona`, `identificacion`, `nombres`, `apellidos`, `motivo`, `telefono`, `email_user`, `password`, `token`, `rolid`, `datecreated`, `status`) VALUES
-(19, '000003', 'Rosa', 'Fernandez', 'Dolor De Cabeza', 987456666, 'greisi@gmail.com', '3d0a234093378eaffc3fe01cd', '', 19, '2024-11-21 23:33:23', 0),
-(20, '000004', 'Jhoelito', 'Peres Anibal', 'Dolor De Estomago', 963258741, 'jhoel@gmail.com', 'd17f25ecfbcc7857f7bebea46', '', 18, '2024-11-22 11:19:17', 0),
-(21, '000005', 'JOSE JHON R', 'RODRIGUEZ FERNANDEZ R', 'Dolor De Cabeza', 963258700, 'jhon.mm16.rf@gmail.com', '9cc0f9f3386a6d0b1cd628429', '', 19, '2024-11-22 11:58:29', 4),
-(22, '789444', 'JOSE JHON R', 'RODRIGUEZ', 'Dolor De Estomago', 900000000, 'jhon.416.rf@gmail.com', 'd17f25ecfbcc7857f7bebea46', '', 19, '2024-11-22 12:07:21', 0),
-(23, '012000', 'JOSE JHON Yy', 'RODRIGUEZ FERNANDEZ Yy', 'Dolor De Estomago', 963258749, 'jhon.16.rft@gmail.com', 'e11d8cb94b54e0a2fd0e780f9', '', 19, '2024-11-22 12:23:44', 0),
-(24, '123654', 'David', 'Rojas Peres', 'Accidente De Transito', 963258741, 'david@gmail.com', '85544776d98a90e2f106b7bdc', '', 19, '2024-11-22 13:58:37', 6),
-(25, '78905440', 'JOSE JHON', 'RODRIGUEZ FERNANDEZ', 'Dolor De Cabeza', 963258741, 'jhorn@gmail.com', '69f7f7a7f8bca9970fa6f9c0b', '', 19, '2024-11-22 14:42:52', 3);
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `permisos`
 --
 
@@ -211,8 +177,71 @@ INSERT INTO `persona` (`idpersona`, `identificacion`, `nombres`, `apellidos`, `t
 (11, '7890544', 'JOSE JHON', 'RODRIGUEZ FERNANDEZ', 987456000, 'jhorrrn@gmail.com', 'cc399d73903f06ee694032ab0', '', '', '', '', 20, '2024-11-21 18:32:31', 0),
 (12, '7896544', 'JOSE JHON', 'RODRIGUEZ FERNANDEZ', 987456000, 'jhon.1655.rf@gmail.com', 'f658d34bbd6a1c3e27771898e', '', '', '', '', 20, '2024-11-21 18:33:00', 1),
 (13, '00000123', 'Rosa Belinda J', 'Rojas Peralta Mori', 987456326, 'jhoroorrn@gmail.com', '6460662e217c7a9f899208dd7', '', '', '', '', 20, '2024-11-21 19:27:40', 0),
-(14, '000003', 'Yuki', 'Rojas Gallardo', 936852147, 'yuki@gmail.com', 'b870d3e3827088d978fbc2606', '', '', '', '', 20, '2024-11-22 11:14:06', 1),
+(14, '000003', 'Yukiyyyyyyyyy', 'Rojas Gallardo', 936852147, 'yuki@gmail.com', 'e3b68a1c3618aaf3ea2a648ae', '', '', '', '', 20, '2024-11-22 11:14:06', 2),
 (15, '0000005', 'Jhon', 'Rodriguez Fernandez', 963258741, 'jhy@gmail.com', '68c9de238e652d4dbc529a56d', '', '', '', '', 20, '2024-11-22 13:54:39', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `productos`
+--
+
+CREATE TABLE `productos` (
+  `idproducto` bigint(20) NOT NULL,
+  `codigo` int(30) NOT NULL,
+  `nombre_producto` varchar(60) NOT NULL,
+  `especificaciones` text NOT NULL,
+  `color` varchar(20) NOT NULL,
+  `precio` decimal(10,0) NOT NULL,
+  `fecha_registro` date NOT NULL,
+  `categoria` varchar(60) NOT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`idproducto`, `codigo`, `nombre_producto`, `especificaciones`, `color`, `precio`, `fecha_registro`, `categoria`, `status`) VALUES
+(1, 90000, 'Khijbi', 'Dsasddsa', 'Negro', 234, '0000-00-00', '2024-12-28', 1),
+(2, 94004, 'JOSE JHON', 'Rewrtre', 'TxdaSDDS', 234, '2024-12-28', 'Masculino', 2),
+(3, 384949, 'Wkkwkwkw', 'Hdhdhdhdd', 'Negro', 23, '2024-12-20', 'Masculino', 1),
+(4, 384949, 'Wkkwkwkw', 'Hdhdhdhdd', 'Negro', 23, '2024-12-20', 'Masculino', 1),
+(5, 384949, 'Wkkwkwkw', 'Hdhdhdhdd', 'Negro', 23, '2024-12-20', 'Masculino', 1),
+(6, 384949, 'Wkkwkwkw', 'Hdhdhdhdd', 'Negro', 23, '2024-12-20', 'Masculino', 1),
+(7, 384949, 'Wkkwkwkw', 'Hdhdhdhdd', 'Negro', 23, '2024-12-20', 'Masculino', 1),
+(8, 384949, 'Wkkwkwkw', 'Hdhdhdhdd', 'Negro', 23, '2024-12-20', 'Masculino', 1),
+(9, 83883, 'Jsjjsjsjss', 'Djjdjdjdj', 'Negro', 253, '2024-12-20', 'Masculino', 1),
+(10, 83883, 'Jsjjsjsjss', 'Djjdjdjdj', 'Negro', 253, '2024-12-20', 'Masculino', 1),
+(11, 83883, 'Jsjjsjsjss', 'Djjdjdjdj', 'Negro', 253, '2024-12-20', 'Masculino', 1),
+(12, 83883, 'Jsjjsjsjss', 'Djjdjdjdj', 'Negro', 253, '2024-12-20', 'Masculino', 1),
+(13, 83883, 'Jsjjsjsjss', 'Djjdjdjdj', 'Negro', 253, '2024-12-20', 'Masculino', 1),
+(14, 83883, 'Jsjjsjsjss', 'Djjdjdjdj', 'Negro', 253, '2024-12-20', 'Masculino', 1),
+(15, 83883, 'Jsjjsjsjss', 'Djjdjdjdj', 'Negro', 253, '2024-12-20', 'Masculino', 1),
+(16, 83883, 'Jsjjsjsjss', 'Djjdjdjdj', 'Negro', 253, '2024-12-20', 'Masculino', 1),
+(17, 83883, 'Jsjjsjsjss', 'Djjdjdjdj', 'Negro', 253, '2024-12-20', 'Masculino', 1),
+(18, 83883, 'Jsjjsjsjss', 'Djjdjdjdj', 'Negro', 253, '2024-12-20', 'Masculino', 1),
+(19, 83883, 'Jsjjsjsjss', 'Djjdjdjdj', 'Negro', 253, '2024-12-20', 'Masculino', 1),
+(20, 83883, 'Jsjjsjsjss', 'Djjdjdjdj', 'Negro', 253, '2024-12-20', 'Masculino', 1),
+(21, 2538, 'JOSE JHONee', 'Hdhdhdhd', 'Negro', 334, '2024-12-20', 'Masculino', 1),
+(22, 2538, 'JOSE JHONee', 'Hdhdhdhd', 'Negro', 334, '2024-12-20', 'Masculino', 1),
+(23, 2538, 'JOSE JHONee', 'Hdhdhdhd', 'Negro', 334, '2024-12-20', 'Masculino', 1),
+(24, 2538, 'JOSE JHONee', 'Hdhdhdhd', 'Negro', 334, '2024-12-20', 'Masculino', 1),
+(25, 2538, 'JOSE JHONee', 'Hdhdhdhd', 'Negro', 334, '2024-12-20', 'Masculino', 1),
+(26, 2538, 'JOSE JHONee', 'Hdhdhdhd', 'Negro', 334, '2024-12-20', 'Masculino', 1),
+(27, 2538, 'JOSE JHONee', 'Hdhdhdhd', 'Negro', 334, '2024-12-20', 'Masculino', 1),
+(28, 2538, 'JOSE JHONee', 'Hdhdhdhd', 'Negro', 334, '2024-12-20', 'Masculino', 1),
+(29, 12552, 'JOSE JHONfff', 'Sggss', 'Negro', 234, '2024-12-20', 'Masculino', 1),
+(30, 900003, 'JOSE JHONdfsag', 'QaXDSA', 'JjjjjjjWWW', 123, '2024-12-13', 'Masculino', 1),
+(31, 39404, 'Khijbi', 'KWSKKS', 'KEWKSKEWD', 234, '2024-12-20', 'Masculino', 1),
+(32, 2, 'JOSE JHONdfsag', 'SAMSSAM', 'SKQKAXK', 3333, '2024-12-27', 'Masculino', 0),
+(33, 1223, 'MMSMMS', 'KKSKKSKS', 'JSJJS', 234, '2024-12-26', 'Masculino', 0),
+(34, 181881, 'Szdsfsf', 'SasA', 'Sadaasd', 223, '2024-12-26', 'Masculino', 0),
+(35, 22222, 'Sdddsdds', 'Ssd<', 'Sddssds', 234, '2024-12-26', 'Masculino', 0),
+(36, 900005, 'D', 'Sd<g<sfd', 'Sdgzsd', 222, '2024-12-26', 'Masculino', 1),
+(37, 1234423423, 'Gsdgsdfga', 'Sdggsfd', 'Gfdgfdgf', 43542, '0000-00-00', '2024-12-26', 1),
+(38, 234, 'Sadsa', 'Sadgds', 'Egrf', 233, '0000-00-00', '2024-12-27', 1),
+(39, 22233, 'Ggggg', 'Ttttttt', 'Azul', 445, '2024-12-25', 'Masculino', 0);
 
 -- --------------------------------------------------------
 
@@ -249,6 +278,31 @@ INSERT INTO `rol` (`idrol`, `nombrerol`, `descripcion`, `status`) VALUES
 (33, 'JOSE JHON', 'aerdhtrfedshg', 0),
 (34, 'Reposteria', 'Eragserfd', 0);
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `nombre_usuario` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre_usuario`, `password`) VALUES
+(5, 'pooo', 'f3ede926587776a8cd79fb2afe4e07b4'),
+(6, 'yuuuu', 'b0baee9d279d34fa1dfd71aadb908c3f'),
+(7, 'roo', '6606afc4c696fa1b4f0f68408726649d'),
+(9, 'who', '53d670af9bb16ea82e7ef41ee23ec6df'),
+(10, 'ryu', 'd4cfab1b518d245bc1fc8db52b6d8ddc'),
+(11, 'wqq', 'b2ca678b4c936f905fb82f2733f5297f'),
+(12, 'Escorpio', '087c861ebd4b429a423d8e0b966863c0');
+
 --
 -- Índices para tablas volcadas
 --
@@ -274,13 +328,6 @@ ALTER TABLE `modulo`
   ADD PRIMARY KEY (`idmodulo`);
 
 --
--- Indices de la tabla `pacientes`
---
-ALTER TABLE `pacientes`
-  ADD PRIMARY KEY (`idpersona`),
-  ADD KEY `rolid` (`rolid`);
-
---
 -- Indices de la tabla `permisos`
 --
 ALTER TABLE `permisos`
@@ -296,10 +343,23 @@ ALTER TABLE `persona`
   ADD KEY `rolid` (`rolid`);
 
 --
+-- Indices de la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD PRIMARY KEY (`idproducto`);
+
+--
 -- Indices de la tabla `rol`
 --
 ALTER TABLE `rol`
   ADD PRIMARY KEY (`idrol`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nombre_usuario` (`nombre_usuario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -324,12 +384,6 @@ ALTER TABLE `modulo`
   MODIFY `idmodulo` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `pacientes`
---
-ALTER TABLE `pacientes`
-  MODIFY `idpersona` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
 -- AUTO_INCREMENT de la tabla `permisos`
 --
 ALTER TABLE `permisos`
@@ -342,10 +396,22 @@ ALTER TABLE `persona`
   MODIFY `idpersona` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
+-- AUTO_INCREMENT de la tabla `productos`
+--
+ALTER TABLE `productos`
+  MODIFY `idproducto` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
 -- AUTO_INCREMENT de la tabla `rol`
 --
 ALTER TABLE `rol`
   MODIFY `idrol` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restricciones para tablas volcadas
@@ -356,12 +422,6 @@ ALTER TABLE `rol`
 --
 ALTER TABLE `medicos`
   ADD CONSTRAINT `medicos_ibfk_1` FOREIGN KEY (`rolid`) REFERENCES `rol` (`idrol`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `pacientes`
---
-ALTER TABLE `pacientes`
-  ADD CONSTRAINT `pacientes_ibfk_1` FOREIGN KEY (`rolid`) REFERENCES `rol` (`idrol`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

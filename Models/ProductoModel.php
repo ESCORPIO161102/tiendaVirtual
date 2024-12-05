@@ -35,15 +35,15 @@
 
 			if(empty($request))
 			{
-				$query_insert  = "INSERT INTO productos(codigo,nombre_producto,especificaciones,color,precio,categoria,fecha_registro,status) 
+				$query_insert  = "INSERT INTO productos(codigo,nombre_producto,especificaciones,color,precio,fecha_registro,categoria,status) 
 								  VALUES(?,?,?,?,?,?,?,?)";
 	        	$arrData = array($this->intCodigo,
         						$this->strNombre,
         						$this->strEspecificacion,
         						$this->strColor,
         						$this->floatPrecio,
+								$this->strCategoria,
         						$this->strFecha,
-        						$this->strCategoria,
 								$this->intStatus);
         						
 	        	$request_insert = $this->insert($query_insert,$arrData);
@@ -89,28 +89,28 @@
 
 			if(empty($request))
 			{
-				if($this->strCategoria  != "")
+				if($this->intCodigo  != "")
 				{
-					$sql = "UPDATE productos SET codigo=?, color=?,nombre_producto=?, especificaciones=?, precio=?, categoria=?,fecha_registro=?, status=? 
+					$sql = "UPDATE productos SET codigo=?, nombre_producto=?, especificaciones=?, color=?, precio=?, fecha_registro=?,categoria=?, status=? 
 							WHERE idproducto = $this->intIdProducto ";
 					$arrData = array($this->intCodigo,
-									$this->strColor,
 	        						$this->strNombre,
 	        						$this->strEspecificacion,
+									$this->strColor,
 	        						$this->floatPrecio,
-	        						$this->strCategoria,
 									$this->strFecha,
+	        						$this->strCategoria,
 	        						$this->intStatus);
 				}else{
-					$sql = "UPDATE productos SET codigo=?, color=?, nombre_producto=?, especificaciones=?, precio=?, categoria=?, fecha_registro=?, status=? 
+					$sql = "UPDATE productos SET codigo=?, nombre_producto=?, especificaciones=?, color=?, precio=?,fecha_registro=?, categoria=?,  status=? 
 							WHERE idproducto = $this->intIdProducto ";
 					$arrData = array($this->intCodigo,
-									$this->strColor,
 	        						$this->strNombre,
 	        						$this->strEspecificacion,
+									$this->strColor,
 	        						$this->floatPrecio,
-	        						$this->strCategoria,
 									$this->strFecha,
+	        						$this->strCategoria,
 	        						$this->intStatus);
 				}
 				$request = $this->update($sql,$arrData);

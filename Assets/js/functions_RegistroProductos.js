@@ -128,12 +128,12 @@ function fntViewUsuario(idproducto){
                 
             
                 document.querySelector("#celCodigo").innerHTML = objData.data.codigo;
-                document.querySelector("#celColor").innerHTML = objData.data.color;
                 document.querySelector("#celNombre").innerHTML = objData.data.nombre_producto;
                 document.querySelector("#celEspecificacion").innerHTML = objData.data.especificaciones;
+                document.querySelector("#celColor").innerHTML = objData.data.color;
                 document.querySelector("#celPrecio").innerHTML = objData.data.precio;
                 document.querySelector("#celCategoria").innerHTML = objData.data.categoria;
-                document.querySelector("#celFechaRegistro").innerHTML = objData.data.fechaRegistro; 
+                document.querySelector("#celFechaRegistro").innerHTML = objData.data.fecha_registro; 
                 document.querySelector("#celEstado").innerHTML = estadoProducto;
                 $('#modalViewUser').modal('show');
             }else{
@@ -152,7 +152,7 @@ function fntEditUsuario(idproducto){
 
     var idproducto =idproducto;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    var ajaxUrl = base_url+'/PRoducto/getProducto/'+idproducto;
+    var ajaxUrl = base_url+'/Producto/getProducto/'+idproducto;
     request.open("GET",ajaxUrl,true);
     request.send();
     request.onreadystatechange = function(){
@@ -166,7 +166,7 @@ function fntEditUsuario(idproducto){
                 document.querySelector("#txtCodigo").value = objData.data.codigo;
                 document.querySelector("#txtColor").value = objData.data.color;
                 document.querySelector("#txtNombre").value = objData.data.nombre_producto;
-                document.querySelector("#txtEspecificacion").value = objData.data.especificacion;
+                document.querySelector("#txtEspecificacion").value = objData.data.especificaciones;
                 document.querySelector("#txtPrecio").value = objData.data.precio;
                 document.querySelector("#txtCategoria").value = objData.data.categoria;
                 document.querySelector("#txtFecha").value = objData.data.fecha_registro;

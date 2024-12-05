@@ -28,8 +28,8 @@
 					$strEspecificacion = ucwords(strClean($_POST['txtEspecificacion']));
 					$strColor = ucwords( strClean($_POST['txtColor']));
 					$floatPrecio = intval(strClean($_POST['txtPrecio']));
-					$strFecha = strtolower(strClean($_POST['txtFecha']));
 					$strCategoria = ucwords(strClean($_POST['txtCategoria']));
+					$strFecha = strtolower(strClean($_POST['txtFecha']));
 					$intStatus = intval(strClean($_POST['listStatus']));
 
 					if($idProducto == 0)
@@ -40,7 +40,7 @@
 																$strColor,
 																$strNombre, 
 																$strEspecificacion,
-																$floatPrecio, 
+																$floatPrecio,
 																$strFecha,
 																$strCategoria, 
 																$intStatus );
@@ -53,7 +53,7 @@
 						$strEspecificacion,
 						$floatPrecio, 
 						$strFecha,
-						$strCategoria, 
+						$strCategoria,
 						$intStatus );
 					}
 
@@ -90,9 +90,9 @@
         }
 
         $arrData[$i]['options'] = '<div class="text-center">
-            <button class="btn btn-info btn-sm btnViewUsuario" onClick="fntViewUsuario(' . $arrData[$i]['idproducto'] . ')" title="Ver usuario"><i class="far fa-eye"></i></button>
-            <button class="btn btn-primary btn-sm btnEditUsuario" onClick="fntEditUsuario(' . $arrData[$i]['idproducto'] . ')" title="Editar usuario"><i class="fas fa-pencil-alt"></i></button>
-            <button class="btn btn-danger btn-sm btnDelUsuario" onClick="fntDelUsuario(' . $arrData[$i]['idproducto'] . ')" title="Eliminar usuario"><i class="far fa-trash-alt"></i></button>
+            <button class="btn btn-info btn-sm btnViewUsuario" onClick="fntViewUsuario(' . $arrData[$i]['idproducto'] . ')" title="Ver producto"><i class="far fa-eye"></i></button>
+            <button class="btn btn-primary btn-sm btnEditUsuario" onClick="fntEditUsuario(' . $arrData[$i]['idproducto'] . ')" title="Editar producto"><i class="fas fa-pencil-alt"></i></button>
+            <button class="btn btn-danger btn-sm btnDelUsuario" onClick="fntDelUsuario(' . $arrData[$i]['idproducto'] . ')" title="Eliminar producto"><i class="far fa-trash-alt"></i></button>
         </div>';
     }
     echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
