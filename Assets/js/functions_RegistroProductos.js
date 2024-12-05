@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function(){
             "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
         },
         "ajax":{
-            "url": " "+base_url+"/Registro/getProductos",
+            "url": " "+base_url+"/Producto/getProductos",
             "dataSrc":""
         },
         "columns":[
@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', function(){
             {"data":"especificaciones"},
             {"data":"color"},
             {"data":"precio"},
-            {"data":"fecha_registro"},
             {"data":"categoria"},
+            {"data":"fecha_registro"},
             {"data":"status"},
             {"data":"options"}
         ],
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function(){
     var formProducto = document.querySelector("#formProducto");
     formProducto.onsubmit = function(e) {
         e.preventDefault();
-        var strCodigo = document.querySelector('#txtCodigo').value;
+        var intCodigo = document.querySelector('#txtCodigo').value;
         var strColor = document.querySelector('#txtColor').value;
         var strNombre = document.querySelector('#txtNombre').value;
         var strEspecificacion = document.querySelector('#txtEspecificacion').value;
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function(){
         var strFecha = document.querySelector('#txtFecha').value;
 
 
-        if(strCodigo == '' || strColor == '' || strNombre == '' || strEspecificacion == '' || floatPrecio == '' || strCategoria == '' || strFecha == '')
+        if(intCodigo == '' || strColor == '' || strNombre == '' || strEspecificacion == '' || floatPrecio == '' || strCategoria == '' || strFecha == '')
         {
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function(){
         } 
 
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = base_url+'/Registro/setProducto'; 
+        var ajaxUrl = base_url+'/Producto/setProducto'; 
         var formData = new FormData(formProducto);
         request.open("POST",ajaxUrl,true);
         request.send(formData);
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 {
                     $('#modalFormProducto').modal("hide");
                     formProducto.reset();
-                    swal("Productos", objData.msg ,"success");
+                    swal("Producto", objData.msg ,"success");
                     tableProductos.api().ajax.reload();
                 }else{
                     swal("Error", objData.msg , "error");
@@ -102,12 +102,19 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 }, false);
 
+window.addEventListener('load', function() {
+    fntRolesUsuario();
+    /*fntViewUsuario();
+    fntEditUsuario();
+    fntDelUsuario();*/
+}, false);
+
 
 
 function fntViewUsuario(idproducto){
     var idproducto = idproducto;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    var ajaxUrl = base_url+'/Registro/getProducto/'+idproducto;
+    var ajaxUrl = base_url+'/Producto/getProducto/'+idproducto;
     request.open("GET",ajaxUrl,true);
     request.send();
     request.onreadystatechange = function(){
@@ -115,32 +122,10 @@ function fntViewUsuario(idproducto){
             var objData = JSON.parse(request.responseText);
 
             if (objData.status) {
-                let estadoProducto = "";
-            
-                // Determinamos el estado del usuario con un switch
-                switch (objData.data.status) {
-                    case 1:
-                        estadoProducto = '<span class="badge badge-success">Paciente</span>';
-                        break;
-                    case 2:
-                        estadoProducto = '<span class="badge badge-danger">Inactivo</span>';
-                        break;
-                    case 3:
-                        estadoProducto = '<span class="badge badge-info">Hozpitalizado (UCI)</span>';
-                        break;
-                    case 4:
-                        estadoProducto = '<span class="badge badge-warning">Dado de Alta</span>';
-                        break;
-                    case 5:
-                        estadoProducto = '<span class="badge badge-primary">Salud Crítica</span>';
-                        break;
-                    case 6:
-                        estadoProducto = '<span class="badge badge-dark">Fallecido</span>';
-                        break;
-                    case 7:
-                        estadoProducto = '<span class="badge badge-secondary">Hozpitalizado</span>';
-                        break;
-                }
+                var estadoProducto = objData.data.status == 1 ? 
+                '<span class="badge badge-success">Activo</span>' : 
+                '<span class="badge badge-danger">Inactivo</span>';
+                
             
                 document.querySelector("#celCodigo").innerHTML = objData.data.codigo;
                 document.querySelector("#celColor").innerHTML = objData.data.color;
@@ -167,7 +152,7 @@ function fntEditUsuario(idproducto){
 
     var idproducto =idproducto;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    var ajaxUrl = base_url+'/PRoductosRe/getProducto/'+idproducto;
+    var ajaxUrl = base_url+'/PRoducto/getProducto/'+idproducto;
     request.open("GET",ajaxUrl,true);
     request.send();
     request.onreadystatechange = function(){
@@ -216,7 +201,7 @@ function fntDelUsuario(idproducto){
         if (isConfirm) 
         {
             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            var ajaxUrl = base_url+'/Registro/delProducto';
+            var ajaxUrl = base_url+'/Producto/delProducto';
             var strData = "idProducto="+idProducto;
             request.open("POST",ajaxUrl,true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

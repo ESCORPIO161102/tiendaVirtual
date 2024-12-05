@@ -11,7 +11,7 @@
         </div>
         <ul class="app-breadcrumb breadcrumb">
           <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-          <li class="breadcrumb-item"><a href="<?= base_url(); ?>/registro"><?= $data['page_title'] ?></a></li>
+          <li class="breadcrumb-item"><a href="<?= base_url(); ?>/producto"><?= $data['page_title'] ?></a></li>
         </ul>
       </div>
         <div class="row">
@@ -28,8 +28,9 @@
                           <th>Especificaciones</th>
                           <th>Color</th>
                           <th>Precio</th>
-                          <th>Fecha Registro</th>
                           <th>Categoria</th>
+                          <th>Fecha Registro</th>
+                          <th>Estado</th>
                           <th>Acciones</th>
                         </tr>
                       </thead>
@@ -41,6 +42,7 @@
                           <td>ram 4 gb</td>
                           <td>verde oscuro</td>
                           <td>550</td>
+                          <td>alectronicos</td>
                           <td>02-12-2024</td>
                           <td>Activo</td>
                           <td></td>
