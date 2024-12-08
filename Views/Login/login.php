@@ -39,28 +39,6 @@
         <a href="newUser">Registrate aqui</a>
       </div>
     </div>
-<<<<<<< HEAD
-        <div class="login-container">
-        <h2>Iniciar Sesion</h2>
-        <form class="login-form" id="login-form" autocomplete="off">
-            <label for="username">Usuario</label>
-            <input type="text" id="username" name="username" required placeholder="Ingresa tu usuario" autocomplete="off">
-            <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" required placeholder="Ingresa tu contraseña" autocomplete="off">
-            <button type="submit">Iniciar Sesion</button>
-        </form>
-        <div class="foot-new-user">
-            <p>¿No estas registrado?</p>
-            <a href="newUser">Registrate aqui</a>
-        </div>
-    </div>
-    </section>
-    
-    <!-- Essential javascripts for application to work-->
-     <script src="<?= media(); ?>/js/alert.js"></script>
-    <!--Fin Login-->
-    <script src="<?= media(); ?>/js/functions_login.js"></script>
-=======
   </section>
 
   <!-- Essential javascripts for application to work-->
@@ -69,6 +47,5 @@
   <script src="<?= media(); ?>/js/functions_login.js"></script>
 
 </body>
->>>>>>> f32b4aba089405c5c1e851bc4611958e3fe4caad
 
 </html>

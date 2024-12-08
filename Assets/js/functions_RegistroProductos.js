@@ -102,6 +102,13 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 }, false);
 
+window.addEventListener('load', function() {
+    fntRolesUsuario();
+    /*fntViewUsuario();
+    fntEditUsuario();
+    fntDelUsuario();*/
+}, false);
+
 
 
 function fntViewUsuario(idproducto){

@@ -73,12 +73,8 @@ class ProductoModel extends Mysql
 		return $request;
 	}
 
-<<<<<<< HEAD
-		public function updateProducto( int $idProducto, int $codigo, string $color,string $nombre, string $especificacion, float $precio, string $fecha, string $categoria, int $status){
-=======
 	public function updateProducto(int $idProducto, int $codigo, string $color, string $nombre, string $especificacion, int $precio, string $fecha, string $categoria, int $status)
 	{
->>>>>>> f32b4aba089405c5c1e851bc4611958e3fe4caad
 
 		$this->intIdProducto = $idProducto;
 		$this->intCodigo = $codigo;

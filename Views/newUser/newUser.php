@@ -30,7 +30,7 @@
         <h2>Crear Usuario</h2>
         <form class="login-form" id="formSave" autocomplete="off">
             <label for="txtUserName">Usuario</label>
-            <input type="text" id="txtUserName" name="txtUserName" required placeholder="Ingresa tu usuario" autocomplete="off">
+            <input type="text" id="txtUserName" name="txtUserName" required placeholder="Ingresa tu usuario">
             <label for="txtPassword1">Contraseña</label>
             <input type="password" id="txtPassword1" name="txtPassword1" required placeholder="Ingresa tu contraseña" autocomplete="off">
             <label for="txtPassword2">Confirme su contraseña</label>

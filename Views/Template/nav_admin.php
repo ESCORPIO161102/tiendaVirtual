@@ -10,7 +10,7 @@
       </div>
       <ul class="app-menu">
         <li>
-            <a class="app-menu__item" href="<?= base_url(); ?>/dashboard">
+            <a class="app-menu__item" href="<?= base_url(); ?>/laptops">
                 <i class="app-menu__icon fa fa-dashboard"></i>
                 <span class="app-menu__label">Laptos</span>
             </a>
