@@ -33,6 +33,12 @@
                 <span class="app-menu__label">Registro Productos</span>
             </a>
         </li>
+        <li>
+            <a class="app-menu__item" href="<?= base_url(); ?>/roles">
+                <i class="app-menu__icon fa fa-dashboard"></i>
+                <span class="app-menu__label">Roles</span>
+            </a>
+        </li>
         <li class="treeview">
             <a class="app-menu__item" href="#" data-toggle="treeview">
                 <i class="app-menu__icon fa fa-users" aria-hidden="true"></i>

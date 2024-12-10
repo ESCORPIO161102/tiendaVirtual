@@ -59,7 +59,7 @@ class UserController extends User
             'status' => true,
             'message' => "Bienvenido",
             'type' => 'success',
-            'url' => $this->base_url() . "/dashboard"
+            'url' => $this->base_url() . "/laptops"
         );
         $this->toJson($data);
         die();
