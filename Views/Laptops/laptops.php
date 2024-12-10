@@ -26,7 +26,7 @@
                 class="imagen-producto u-full-width" data-id="007">
               <div class="info-card">
                 <h4><?= $value["nombre_producto"] ?></h4>
-                <p hidden>Referencia 024010</p>
+                <p hidden><?=$value["especificaciones"] ?></p>
                 <p>Referencia 024010</p>
                 <p class="stock">!Últimas unidades en stock</p>
                 <img src="<?= media(); ?>/images/estrellas.png">

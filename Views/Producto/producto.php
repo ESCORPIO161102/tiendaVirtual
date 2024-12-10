@@ -27,6 +27,7 @@
                           <th>Nombre Producto</th>
                           <th>Especificaciones</th>
                           <th>Color</th>
+                          <th>Imagen</th>
                           <th>Precio</th>
                           <th>Categoria</th>
                           <th>Fecha Registro</th>
@@ -41,6 +42,7 @@
                           <td>Henández</td>
                           <td>ram 4 gb</td>
                           <td>verde oscuro</td>
+                          <td>imagen</td>
                           <td>550</td>
                           <td>alectronicos</td>
                           <td>02-12-2024</td>

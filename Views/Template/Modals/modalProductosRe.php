@@ -9,7 +9,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="formProducto" name="formProducto" class="form-horizontal">
+        <form id="formProducto" name="formProducto" class="form-horizontal" enctype="multipart/form-data" method="POST">
           <input type="hidden" id="idProducto" name="idProducto" value="">
           <p class="text-primary">Todos los campos son obligatorios.</p>
 
@@ -23,8 +23,8 @@
               <input type="text" class="form-control valid validText" id="txtColor" name="txtColor" required="">
             </div>
             <div class="form-group col-md-6">
-              <label for="txtColor">Imagen</label>
-              <input type="file" class="form-control valid validText" id="txtColor" name="txtColor" required="">
+              <label for="txtImagen">Imagen</label>
+              <input type="file" class="form-control valid validText" id="txtImagen" name="txtImagen" required="">
             </div>
           </div>
           <div class="form-row">
@@ -98,6 +98,10 @@
             <tr>
               <td>Color:</td>
               <td id="celColor">negro</td>
+            </tr>
+            <tr>
+              <td>Imagen:</td>
+              <td id="celImagen">negro</td>
             </tr>
             <tr>
               <td>Nombre Producto:</td>

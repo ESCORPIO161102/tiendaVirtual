@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function(){
             {"data":"nombre_producto"},
             {"data":"especificaciones"},
             {"data":"color"},
+            {"data":"imagen"},
             {"data":"precio"},
             {"data":"categoria"},
             {"data":"fecha_registro"},
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function(){
         e.preventDefault();
         var intCodigo = document.querySelector('#txtCodigo').value;
         var strColor = document.querySelector('#txtColor').value;
+        var strImagen = document.querySelector('#txtImagen').value;
         var strNombre = document.querySelector('#txtNombre').value;
         var strEspecificacion = document.querySelector('#txtEspecificacion').value;
         var floatPrecio = document.querySelector('#txtPrecio').value;
@@ -65,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function(){
         var strFecha = document.querySelector('#txtFecha').value;
 
 
-        if(intCodigo == '' || strColor == '' || strNombre == '' || strEspecificacion == '' || floatPrecio == '' || strCategoria == '' || strFecha == '')
+        if(intCodigo == '' || strColor == ''|| strImagen== '' || strNombre == '' || strEspecificacion == '' || floatPrecio == '' || strCategoria == '' || strFecha == '')
         {
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
@@ -131,6 +133,7 @@ function fntViewUsuario(idproducto){
                 document.querySelector("#celNombre").innerHTML = objData.data.nombre_producto;
                 document.querySelector("#celEspecificacion").innerHTML = objData.data.especificaciones;
                 document.querySelector("#celColor").innerHTML = objData.data.color;
+                document.querySelector("#celImagen").innerHTML = objData.data.imagen;
                 document.querySelector("#celPrecio").innerHTML = objData.data.precio;
                 document.querySelector("#celCategoria").innerHTML = objData.data.categoria;
                 document.querySelector("#celFechaRegistro").innerHTML = objData.data.fecha_registro; 
@@ -165,6 +168,7 @@ function fntEditUsuario(idproducto){
                 document.querySelector("#idProducto").value = objData.data.idproducto;
                 document.querySelector("#txtCodigo").value = objData.data.codigo;
                 document.querySelector("#txtColor").value = objData.data.color;
+                document.querySelector("#txtImagen").value = objData.data.imagen;
                 document.querySelector("#txtNombre").value = objData.data.nombre_producto;
                 document.querySelector("#txtEspecificacion").value = objData.data.especificaciones;
                 document.querySelector("#txtPrecio").value = objData.data.precio;

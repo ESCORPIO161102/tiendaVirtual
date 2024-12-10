@@ -18,7 +18,7 @@
 		public function setProducto(){
 			if($_POST){
 				
-				if(empty($_POST['txtCodigo']) || empty($_POST['txtNombre']) || empty($_POST['txtEspecificacion']) || empty($_POST['txtColor']) ||  empty($_POST['txtPrecio']) || empty($_POST['txtCategoria']) || empty($_POST['txtFecha']) || empty($_POST['listStatus']) )
+				if(empty($_POST['txtCodigo']) || empty($_POST['txtNombre']) || empty($_POST['txtEspecificacion']) || empty($_POST['txtColor'])|| empty($_POST['txtImagen']) ||  empty($_POST['txtPrecio']) || empty($_POST['txtCategoria']) || empty($_POST['txtFecha']) || empty($_POST['listStatus']) )
 				{
 					$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
 				}else{ 
@@ -27,6 +27,7 @@
 					$strNombre = ucwords(strClean($_POST['txtNombre']));
 					$strEspecificacion = ucwords(strClean($_POST['txtEspecificacion']));
 					$strColor = ucwords( strClean($_POST['txtColor']));
+					$strImagen = ucwords( strClean($_POST['txtImagen']));
 					$floatPrecio = intval(strClean($_POST['txtPrecio']));
 					$strCategoria = ucwords(strClean($_POST['txtCategoria']));
 					$strFecha = strtolower(strClean($_POST['txtFecha']));
@@ -38,6 +39,7 @@
 
 						$request_user = $this->model->insertProducto($intCodigo,
 																$strColor,
+																$strImagen,
 																$strNombre, 
 																$strEspecificacion,
 																$floatPrecio,
@@ -49,6 +51,7 @@
 						$request_user = $this->model->updateProducto($idProducto,
 						$intCodigo,
 						$strColor,
+						$strImagen,
 						$strNombre, 
 						$strEspecificacion,
 						$floatPrecio, 
