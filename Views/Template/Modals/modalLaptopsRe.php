@@ -79,7 +79,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="modalViewUser" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modalViewProducto" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header header-primary">

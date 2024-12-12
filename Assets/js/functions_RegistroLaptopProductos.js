@@ -111,16 +111,11 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 }, false);
 
-window.addEventListener('load', function() {
-    fntRolesUsuario();
-    /*fntViewUsuario();
-    fntEditUsuario();
-    fntDelUsuario();*/
-}, false);
 
 
 
-function fntViewUsuario(idproducto){
+
+function fntViewProducto(idproducto){
     var idproducto = idproducto;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
     var ajaxUrl = base_url+'/laptopProducto/getProducto/'+idproducto;
@@ -143,9 +138,9 @@ function fntViewUsuario(idproducto){
                 document.querySelector("#celImagen").innerHTML = `<img src="${base_url}/uploads/${objData.data.imagen}" alt="Imagen Producto" width="50">`;
                 document.querySelector("#celPrecio").innerHTML = objData.data.precio;
                 document.querySelector("#celCategoria").innerHTML = objData.data.categoria;
-                document.querySelector("#celFechaRegistro").innerHTML = objData.data.fecha_registro; 
+                document.querySelector("#celFechaRegistro").innerHTML = objData.data.fechaRegistro; 
                 document.querySelector("#celEstado").innerHTML = estadoProducto;
-                $('#modalViewUser').modal('show');
+                $('#modalViewProducto').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
             }
@@ -154,7 +149,7 @@ function fntViewUsuario(idproducto){
 }
 //SSSSSSSSSSS
 
-function fntEditUsuario(idproducto){
+function fntEditProducto(idproducto){
     document.querySelector('#titleModal').innerHTML ="Actualizar Producto";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
@@ -172,15 +167,16 @@ function fntEditUsuario(idproducto){
 
             if(objData.status)
             {
+                
                 document.querySelector("#idProducto").value = objData.data.idproducto;
                 document.querySelector("#txtCodigo").value = objData.data.codigo;
                 document.querySelector("#txtColor").value = objData.data.color;
-                document.querySelector("#txtImagen").value = objData.data.imagen;
                 document.querySelector("#txtNombre").value = objData.data.nombre_producto;
                 document.querySelector("#txtEspecificacion").value = objData.data.especificaciones;
                 document.querySelector("#txtPrecio").value = objData.data.precio;
                 document.querySelector("#txtCategoria").value = objData.data.categoria;
-                document.querySelector("#txtFecha").value = objData.data.fecha_registro;
+                document.querySelector("#txtFecha").value = objData.data.fechaRegistro;
+                document.querySelector("#txtImagen").value = objData.data.imagen;
 
                 if(objData.data.status == 1){
                     document.querySelector("#listStatus").value = 1;
@@ -195,7 +191,7 @@ function fntEditUsuario(idproducto){
     }
 }
 
-function fntDelUsuario(idproducto){
+function fntDelProducto(idproducto){
 
     var idProducto = idproducto;
     swal({

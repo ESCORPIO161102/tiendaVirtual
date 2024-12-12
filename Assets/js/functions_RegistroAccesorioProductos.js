@@ -111,16 +111,10 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 }, false);
 
-window.addEventListener('load', function() {
-    fntRolesUsuario();
-    /*fntViewUsuario();
-    fntEditUsuario();
-    fntDelUsuario();*/
-}, false);
 
 
 
-function fntViewUsuario(idproducto){
+function fntViewProducto(idproducto){
     var idproducto = idproducto;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
     var ajaxUrl = base_url+'/accesorioProducto/getProducto/'+idproducto;
@@ -145,7 +139,7 @@ function fntViewUsuario(idproducto){
                 document.querySelector("#celCategoria").innerHTML = objData.data.categoria;
                 document.querySelector("#celFechaRegistro").innerHTML = objData.data.fecha_registro; 
                 document.querySelector("#celEstado").innerHTML = estadoProducto;
-                $('#modalViewUser').modal('show');
+                $('#modalViewProducto').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
             }
@@ -154,7 +148,7 @@ function fntViewUsuario(idproducto){
 }
 //SSSSSSSSSSS
 
-function fntEditUsuario(idproducto){
+function fntEditProducto(idproducto){
     document.querySelector('#titleModal').innerHTML ="Actualizar Producto";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
@@ -195,7 +189,7 @@ function fntEditUsuario(idproducto){
     }
 }
 
-function fntDelUsuario(idproducto){
+function fntDelProducto(idproducto){
 
     var idProducto = idproducto;
     swal({
