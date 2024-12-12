@@ -23,7 +23,7 @@
             ?>
             <div class="card">
               <img src="uploads/<?=$value["imagen"] ?>" style="object-fit: contain;"
-                class="imagen-producto u-full-width" data-id="1">
+                class="imagen-producto u-full-width" data-id="<?=$value["idproducto"] ?>">
               <div class="info-card">
                 <h4><?= $value["nombre_producto"] ?></h4>
                 <p><?= $value["color"] ?></p>
@@ -33,24 +33,24 @@
                 <p class="stock">!Últimas unidades en stock</p>
                 <img src="<?= media(); ?>/images/estrellas.png">
                 <p class="precio"><span class="u-pull-right">S/.<?= $value["precio"] ?></span></p>
-                <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar Al
+                <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="<?=$value["idproducto"] ?>">Agregar Al
                   Carrito</a>
               </div>
             </div>
             <!-- Detalles del producto 1 -->
-            <div id="detallesProducto-1" class="detalles-producto oculto">
+            <div id="detallesProducto-<?=$value["idproducto"] ?>" class="detalles-producto oculto">
               <i class="fa-solid fa-square-xmark close-accesorios"
                 style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
               <div class="contenido-detalles">
-                <img id="imagenProducto-1" alt="Producto" class="imagen-detalles">
+                <img id="imagenProducto-<?=$value["idproducto"] ?>" alt="Producto" class="imagen-detalles">
                 <div class="info-detalles">
-                  <h2 id="tituloProducto-1"></h2>
-                  <p id="descripcionProducto-1"></p>
-                  <p id="categoriaProducto-1"></p>
-                  <p id="precioProducto-1"></p>
+                  <h2 id="tituloProducto-<?=$value["idproducto"] ?>"></h2>
+                  <p id="descripcionProducto-<?=$value["idproducto"] ?>"></p>
+                  <p id="categoriaProducto-<?=$value["idproducto"] ?>"></p>
+                  <p id="precioProducto-<?=$value["idproducto"] ?>"></p>
                 </div>
               </div>
-              <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar Al
+              <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="<?=$value["idproducto"] ?>">Agregar Al
                 Carrito</a>
             </div>
             <?php
