@@ -34,12 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
             // Extraer datos del producto
             const titulo = tarjetaProducto.querySelector('h4').textContent;
             const descripcion = tarjetaProducto.querySelector('p[hidden]').textContent;
+            const Categoría = tarjetaProducto.querySelector('#ca').textContent;
             const precio = tarjetaProducto.querySelector('.precio span').textContent;
             const imagenSrc = e.target.src;
     
             // Actualizar detalles con datos correctos
             detallesProducto.querySelector(`#tituloProducto-${productoId}`).textContent = titulo;
             detallesProducto.querySelector(`#descripcionProducto-${productoId}`).textContent = descripcion;
+            detallesProducto.querySelector(`#categoriaProducto-${productoId}`).textContent = Categoría;
             detallesProducto.querySelector(`#precioProducto-${productoId}`).textContent = `Precio: ${precio}`;
             detallesProducto.querySelector(`#imagenProducto-${productoId}`).src = imagenSrc;
     

@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function(){
         "data": "imagen",
         "render": function(data, type, row) {
             // Mostrar la imagen en lugar del nombre del archivo
-            return '<img src="uploads/' + data + '" alt="Imagen Producto" style="width: 50px; height: auto;">';
+            return '<img src="uploads/' + data + '" alt="Imagen Producto" style="width: 80px; height: auto;">';
         }
     },
     {"data": "precio"},
