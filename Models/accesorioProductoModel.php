@@ -1,6 +1,6 @@
 <?php
 
-class ProductoModel extends Mysql
+class accesorioProductoModel extends Mysql
 {
 	private $intIdProducto;
 	private $intCodigo;
@@ -31,12 +31,12 @@ class ProductoModel extends Mysql
 		$this->strFecha = $fecha;
 		$this->intStatus = $status;
 		$return = 0;
-		$sql = "SELECT * FROM productos WHERE 
+		$sql = "SELECT * FROM productos_accesorios WHERE 
 					codigo = '{$this->intCodigo}' ";
 		$request = $this->select_all($sql);
 
 		if (empty($request)) {
-			$query_insert = "INSERT INTO productos(codigo,nombre_producto,especificaciones,color,imagen,precio,fecha_registro,categoria,status) 
+			$query_insert = "INSERT INTO productos_accesorios(codigo,nombre_producto,especificaciones,color,imagen,precio,fecha_registro,categoria,status) 
 								  VALUES(?,?,?,?,?,?,?,?,?)";
 			$arrData = array(
 				$this->intCodigo,
@@ -61,7 +61,7 @@ class ProductoModel extends Mysql
 	public function selectProductos()
 	{
 		$sql = "SELECT idproducto,codigo,nombre_producto,especificaciones,color,imagen,precio,categoria,fecha_registro,status 
-					FROM productos 
+					FROM productos_accesorios 
 					WHERE status != 0 ";
 		$request = $this->select_all($sql);
 		return $request;
@@ -70,7 +70,7 @@ class ProductoModel extends Mysql
 	{
 		$this->intIdProducto = $idproducto;
 		$sql = "SELECT  idproducto,codigo,nombre_producto,especificaciones,color,imagen,precio,categoria, DATE_FORMAT(fecha_registro, '%d-%m-%Y') as fechaRegistro ,status 
-					FROM productos
+					FROM productos_accesorios
 					WHERE idproducto = $this->intIdProducto";
 		$request = $this->select($sql);
 		return $request;
@@ -90,7 +90,7 @@ class ProductoModel extends Mysql
 		$this->strCategoria = $categoria;
 		$this->intStatus = $status;
 		
-		$sql = "UPDATE `productos` SET `codigo`=?, `nombre_producto`=?, `especificaciones`=?, `color`=?, `imagen`=?, `precio`=?, `fecha_registro`=?, `categoria`=?, `status`=? 
+		$sql = "UPDATE `productos_accesorios` SET `codigo`=?, `nombre_producto`=?, `especificaciones`=?, `color`=?, `imagen`=?, `precio`=?, `fecha_registro`=?, `categoria`=?, `status`=? 
 							WHERE  `idproducto`=?;";
 		$arrData = array(
 			$this->intCodigo,
@@ -112,7 +112,7 @@ class ProductoModel extends Mysql
 	public function deleteProducto(int $intIdproducto)
 	{
 		$this->intIdProducto = $intIdproducto;
-		$sql = "UPDATE productos SET status = ? WHERE idproducto = $this->intIdProducto ";
+		$sql = "UPDATE productos_accesorios SET status = ? WHERE idproducto = $this->intIdProducto ";
 		$arrData = array(0);
 		$request = $this->update($sql, $arrData);
 		return $request;

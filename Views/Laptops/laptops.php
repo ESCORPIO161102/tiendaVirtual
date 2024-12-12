@@ -11,7 +11,7 @@
   </div>
   <div class="row">
 
-    <div class="tile" style="width: 100% !important;">>
+    <div class="tile" style="width: 100% !important;">
       <div class="tile-bodyy">CATALOGO DE PRODUCTOS</div>
       <div id="lista-productos" style="width: 100% !important;">
         <h1 id="encabezado" class="encabezado">Infortec Productos</h1>
@@ -22,8 +22,10 @@
           foreach ($arrProductos as $key => $value) {
             ?>
             <div class="card">
-              <img src="<?= media(); ?>/images/laptop-lenovo.jpg" style="object-fit: contain;"
+              <img src="<?=$value["imagen"] ?>" style="object-fit: contain;"
                 class="imagen-producto u-full-width" data-id="007">
+               return '<img src="uploads/' + data + '" alt="Imagen Producto" style="width: 50px; height: auto;">';
+
               <div class="info-card">
                 <h4><?= $value["nombre_producto"] ?></h4>
                 <p hidden><?=$value["especificaciones"] ?></p>

@@ -28,9 +28,15 @@
             </a>
         </li>
         <li>
-            <a class="app-menu__item" href="<?= base_url(); ?>/producto">
+            <a class="app-menu__item" href="<?= base_url(); ?>/laptopProducto">
                 <i class="app-menu__icon fa fa-dashboard"></i>
-                <span class="app-menu__label">Registro Productos</span>
+                <span class="app-menu__label">Registro Computadoras</span>
+            </a>
+        </li>
+        <li>
+            <a class="app-menu__item" href="<?= base_url(); ?>/accesorioProducto">
+                <i class="app-menu__icon fa fa-dashboard"></i>
+                <span class="app-menu__label">Registro Accesorios</span>
             </a>
         </li>
         <li>

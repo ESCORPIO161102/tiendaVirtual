@@ -9,7 +9,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="formProducto" name="formProducto" class="form-horizontal" enctype="multipart/form-data" method="POST">
+        <form id="formProducto" name="formProducto" class="form-horizontal" method="POST" enctype="multipart/form-data">
           <input type="hidden" id="idProducto" name="idProducto" value="">
           <p class="text-primary">Todos los campos son obligatorios.</p>
 
@@ -22,10 +22,10 @@
               <label for="txtColor">Color</label>
               <input type="text" class="form-control valid validText" id="txtColor" name="txtColor" required="">
             </div>
-            <div class="form-group col-md-6">
-              <label for="txtImagen">Imagen</label>
-              <input type="file" class="form-control valid validText" id="txtImagen" name="txtImagen" required="">
-            </div>
+               <div class="form-group col-md-6">
+      <label for="txtImagen">Imagen:</label>
+      <input class="form-control" type="file" name="txtImagen" id="txtImagen" accept="image/*">
+    </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
@@ -48,8 +48,10 @@
               <label for="txtCategoria">Categoria</label>
               <select name="txtCategoria" id="txtCategoria" class="form-control valid validText" required="">
                 <option value="" disabled selected>Seleccione una opcion</option>
-                <option value="Masculino">Masculino</option>
-                <option value="Femenino">Femenino</option>
+                <option value="Teclados">Teclados</option>
+                <option value="Mause">Mause</option>
+                <option value="Audio">Audio</option>
+                <option value="Protectores">Protectores</option>
               </select>
             </div>
           </div>
