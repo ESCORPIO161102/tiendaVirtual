@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#009688">
   <link rel="shortcut icon" href="<?= media(); ?>/images/favicon.ico">
   <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/main.css">
-  <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/style1.css">
+  <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/style2.css">
 </head>
 
 <body>

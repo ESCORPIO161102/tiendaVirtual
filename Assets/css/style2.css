@@ -1,0 +1,180 @@
+
+  .material-half-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #009688;
+  }
+  
+  .cover {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+
+
+  h2, h3 {
+    text-align: center;
+    color: #a01a18;
+  }
+  h2 {
+    text-decoration: #0066cc; /* Azul para el título */
+  }
+  
+  label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 14px;
+  }
+  
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background: #009688;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #00796b;
+  }
+  
+  a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #009688;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+  
+  a:hover {
+    color: #00796b;
+  }
+  
+  #user-details {
+    margin-top: 20px;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  #user-details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #0b0101;
+  }
+  
+  #user-details strong {
+    color: #164ae6;
+  }
+  
+  /* Estilo para .login-container */
+  .login-container {
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-container h2 {
+    font-size: 20px;
+    color: #1676f4;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #recover-form label {
+    font-size: 14px;
+    color: #110f01;
+  }
+  
+  #recover-form input[type="text"] {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  
+  #recover-form button {
+    background: #0b7bdd;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #recover-form button:hover {
+    background: #0f489e;
+  }
+  
+  #user-details h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #0c4dc6;
+  }
+  
+  #user-details form label {
+    font-size: 14px;
+    color: #555555;
+  }
+  
+  #user-details form input[type="password"] {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  
+  #user-details form button {
+    background: #127bd6;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #user-details form button:hover {
+    background: #940b0b;
+  }
+  
+  .login-container a {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #1e3ede;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .login-container a:hover {
+    color: #005179;
+  }
+  
