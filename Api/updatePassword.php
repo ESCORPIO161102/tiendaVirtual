@@ -11,7 +11,11 @@ if (isset($data->username) && isset($data->newPassword)) {
 
     // Instanciamos el controlador
     $userController = new UserController();
+<<<<<<< HEAD
     $newPassword = md5($newPassword);
+=======
+
+>>>>>>> 92e07dcf6c589749c38d505160ce24cdb584d5b2
     // Llamamos al método del controlador para actualizar la contraseña
     $userController->updateUserPassword($username, $newPassword);
 } else {
