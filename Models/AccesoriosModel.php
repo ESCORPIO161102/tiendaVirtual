@@ -1,14 +1,14 @@
 <?php
 
-class LaptopsModel extends Mysql
+class AccesoriosModel extends Mysql
 {
     public function __construct()
     {
         parent::__construct();
     }
-    public function getLaptops()
+    public function getAccesorios()
     {
-        $sql = "SELECT*FROM productos_laptops;";
+        $sql = "SELECT*FROM productos_accesorios;";
         $request = $this->select_all($sql);
         return $request;
     }

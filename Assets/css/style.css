@@ -384,7 +384,15 @@ body {
     outline: none; /* Elimina el borde por defecto */
     background-color: initial; /* Opcional: vuelve al color original */
 }
+.app-sidebar__user-avatar{
+    height: 80px;
+    width: 80px;
+    padding: 1px;
 
+}
+.app-sidebar__user{
+    padding: 20px;
+}
 
 
 

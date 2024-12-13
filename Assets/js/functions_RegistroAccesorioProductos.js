@@ -8,22 +8,29 @@ document.addEventListener('DOMContentLoaded', function(){
             "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
         },
         "ajax":{
-            "url": " "+base_url+"/Producto/getProductos",
+            "url": " "+base_url+"/accesorioProducto/getProductos",
             "dataSrc":""
         },
-        "columns":[
-            {"data":"idproducto"},
-            {"data":"codigo"},
-            {"data":"nombre_producto"},
-            {"data":"especificaciones"},
-            {"data":"color"},
-            {"data":"imagen"},
-            {"data":"precio"},
-            {"data":"categoria"},
-            {"data":"fecha_registro"},
-            {"data":"status"},
-            {"data":"options"}
-        ],
+        "columns": [
+    {"data": "idproducto"},
+    {"data": "codigo"},
+    {"data": "nombre_producto"},
+    {"data": "especificaciones"},
+    {"data": "color"},
+    {
+        "data": "imagen",
+        "render": function(data, type, row) {
+            // Mostrar la imagen en lugar del nombre del archivo
+            return '<img src="uploads/' + data + '" alt="Imagen Producto" style="width: 80px; height: auto;">';
+        }
+    },
+    {"data": "precio"},
+    {"data": "categoria"},
+    {"data": "fecha_registro"},
+    {"data": "status"},
+    {"data": "options"}
+],
+
         'dom': 'lBfrtip',
         'buttons': [
             {
@@ -59,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function(){
         e.preventDefault();
         var intCodigo = document.querySelector('#txtCodigo').value;
         var strColor = document.querySelector('#txtColor').value;
-        var strImagen = document.querySelector('#txtImagen').value;
+        var fileImagen = document.querySelector('#txtImagen').value;
         var strNombre = document.querySelector('#txtNombre').value;
         var strEspecificacion = document.querySelector('#txtEspecificacion').value;
         var floatPrecio = document.querySelector('#txtPrecio').value;
@@ -67,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function(){
         var strFecha = document.querySelector('#txtFecha').value;
 
 
-        if(intCodigo == '' || strColor == ''|| strImagen== '' || strNombre == '' || strEspecificacion == '' || floatPrecio == '' || strCategoria == '' || strFecha == '')
+        if(intCodigo == '' || strColor == ''|| fileImagen== '' || strNombre == '' || strEspecificacion == '' || floatPrecio == '' || strCategoria == '' || strFecha == '')
         {
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
@@ -82,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function(){
         } 
 
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = base_url+'/Producto/setProducto'; 
+        var ajaxUrl = base_url+'/accesorioProducto/setProducto'; 
         var formData = new FormData(formProducto);
         request.open("POST",ajaxUrl,true);
         request.send(formData);
@@ -104,19 +111,13 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 }, false);
 
-window.addEventListener('load', function() {
-    fntRolesUsuario();
-    /*fntViewUsuario();
-    fntEditUsuario();
-    fntDelUsuario();*/
-}, false);
 
 
 
-function fntViewUsuario(idproducto){
+function fntViewProducto(idproducto){
     var idproducto = idproducto;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    var ajaxUrl = base_url+'/Producto/getProducto/'+idproducto;
+    var ajaxUrl = base_url+'/accesorioProducto/getProducto/'+idproducto;
     request.open("GET",ajaxUrl,true);
     request.send();
     request.onreadystatechange = function(){
@@ -133,12 +134,12 @@ function fntViewUsuario(idproducto){
                 document.querySelector("#celNombre").innerHTML = objData.data.nombre_producto;
                 document.querySelector("#celEspecificacion").innerHTML = objData.data.especificaciones;
                 document.querySelector("#celColor").innerHTML = objData.data.color;
-                document.querySelector("#celImagen").innerHTML = objData.data.imagen;
+                document.querySelector("#celImagen").innerHTML = `<img src="${base_url}/uploads/${objData.data.imagen}" alt="Imagen Producto" width="50">`;
                 document.querySelector("#celPrecio").innerHTML = objData.data.precio;
                 document.querySelector("#celCategoria").innerHTML = objData.data.categoria;
                 document.querySelector("#celFechaRegistro").innerHTML = objData.data.fecha_registro; 
                 document.querySelector("#celEstado").innerHTML = estadoProducto;
-                $('#modalViewUser').modal('show');
+                $('#modalViewProducto').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
             }
@@ -147,7 +148,7 @@ function fntViewUsuario(idproducto){
 }
 //SSSSSSSSSSS
 
-function fntEditUsuario(idproducto){
+function fntEditProducto(idproducto){
     document.querySelector('#titleModal').innerHTML ="Actualizar Producto";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
@@ -155,7 +156,7 @@ function fntEditUsuario(idproducto){
 
     var idproducto =idproducto;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    var ajaxUrl = base_url+'/Producto/getProducto/'+idproducto;
+    var ajaxUrl = base_url+'/accesorioProducto/getProducto/'+idproducto;
     request.open("GET",ajaxUrl,true);
     request.send();
     request.onreadystatechange = function(){
@@ -188,7 +189,7 @@ function fntEditUsuario(idproducto){
     }
 }
 
-function fntDelUsuario(idproducto){
+function fntDelProducto(idproducto){
 
     var idProducto = idproducto;
     swal({
@@ -205,7 +206,7 @@ function fntDelUsuario(idproducto){
         if (isConfirm) 
         {
             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            var ajaxUrl = base_url+'/Producto/delProducto';
+            var ajaxUrl = base_url+'/accesorioProducto/delProducto';
             var strData = "idProducto="+idProducto;
             request.open("POST",ajaxUrl,true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
