@@ -41,30 +41,4 @@ class User extends Mysql
         $request = $this->select($sql, $data);
         return $request;
     }
-
-    // Dentro de la clase User
-protected function getPasswordByUsername($user)
-{
-    $sql = "SELECT nombre_usuario, `password` FROM usuarios WHERE nombre_usuario = ?;";
-    $this->stringUser = $user;
-    $data = array($this->stringUser);
-    $request = $this->select($sql, $data);
-
-    return $request;
-}
-// Dentro de la clase User
-protected function updatePassword($user, $newPassword)
-{
-    $sql = "UPDATE usuarios SET `password` = ? WHERE nombre_usuario = ?;";
-    $this->stringUser = $user;
-    $this->stringPassword = $newPassword;
-    $data = array(
-        $this->stringPassword,
-        $this->stringUser
-    );
-    $request = $this->update($sql, $data);
-
-    return $request;
-}
-
 }
