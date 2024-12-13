@@ -35,6 +35,10 @@
         <button type="submit">Iniciar Sesion</button>
       </form>
       <div class="foot-new-user">
+      <p>¿Olvidé mi contraseña?</p>
+      <a href="recuperarContraseña">Recuperar contraseña</a>
+        </div>
+      <div class="foot-new-user">
         <p>¿No estas registrado?</p>
         <a href="newUser">Registrate aqui</a>
       </div>
