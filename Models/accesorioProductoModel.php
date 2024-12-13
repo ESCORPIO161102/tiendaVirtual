@@ -60,7 +60,7 @@ class accesorioProductoModel extends Mysql
 
 	public function selectProductos()
 	{
-		$sql = "SELECT idproducto,codigo,nombre_producto,especificaciones,color,imagen,precio,categoria,fecha_registro,status 
+		$sql = "SELECT idproductoacc,codigo,nombre_producto,especificaciones,color,imagen,precio,categoria,fecha_registro,status 
 					FROM productos_accesorios 
 					WHERE status != 0 ";
 		$request = $this->select_all($sql);
@@ -69,9 +69,9 @@ class accesorioProductoModel extends Mysql
 	public function selectProducto(int $idproducto)
 	{
 		$this->intIdProducto = $idproducto;
-		$sql = "SELECT  idproducto,codigo,nombre_producto,especificaciones,color,imagen,precio,categoria, DATE_FORMAT(fecha_registro, '%d-%m-%Y') as fechaRegistro ,status 
+		$sql = "SELECT  idproductoacc,codigo,nombre_producto,especificaciones,color,imagen,precio,categoria, DATE_FORMAT(fecha_registro, '%d-%m-%Y') as fechaRegistro ,status 
 					FROM productos_accesorios
-					WHERE idproducto = $this->intIdProducto";
+					WHERE idproductoacc = $this->intIdProducto";
 		$request = $this->select($sql);
 		return $request;
 	}
@@ -91,7 +91,7 @@ class accesorioProductoModel extends Mysql
 		$this->intStatus = $status;
 		
 		$sql = "UPDATE `productos_accesorios` SET `codigo`=?, `nombre_producto`=?, `especificaciones`=?, `color`=?, `imagen`=?, `precio`=?, `fecha_registro`=?, `categoria`=?, `status`=? 
-							WHERE  `idproducto`=?;";
+							WHERE  `idproductoacc`=?;";
 		$arrData = array(
 			$this->intCodigo,
 			$this->strNombre,
@@ -112,7 +112,7 @@ class accesorioProductoModel extends Mysql
 	public function deleteProducto(int $intIdproducto)
 	{
 		$this->intIdProducto = $intIdproducto;
-		$sql = "UPDATE productos_accesorios SET status = ? WHERE idproducto = $this->intIdProducto ";
+		$sql = "UPDATE productos_accesorios SET status = ? WHERE idproductoacc = $this->intIdProducto ";
 		$arrData = array(0);
 		$request = $this->update($sql, $arrData);
 		return $request;

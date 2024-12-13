@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function(){
             "dataSrc":""
         },
         "columns": [
-    {"data": "idproducto"},
+    {"data": "idproductolap"},
     {"data": "codigo"},
     {"data": "nombre_producto"},
     {"data": "especificaciones"},
@@ -115,8 +115,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
-function fntViewProducto(idproducto){
-    var idproducto = idproducto;
+function fntViewProducto(idproductolap){
+    var idproducto = idproductolap;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
     var ajaxUrl = base_url+'/laptopProducto/getProducto/'+idproducto;
     request.open("GET",ajaxUrl,true);
@@ -149,13 +149,13 @@ function fntViewProducto(idproducto){
 }
 //SSSSSSSSSSS
 
-function fntEditProducto(idproducto){
+function fntEditProducto(idproductolap){
     document.querySelector('#titleModal').innerHTML ="Actualizar Producto";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
     document.querySelector('#btnText').innerHTML ="Actualizar";
 
-    var idproducto =idproducto;
+    var idproducto =idproductolap;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
     var ajaxUrl = base_url+'/laptopProducto/getProducto/'+idproducto;
     request.open("GET",ajaxUrl,true);
@@ -168,7 +168,7 @@ function fntEditProducto(idproducto){
             if(objData.status)
             {
                 
-                document.querySelector("#idProducto").value = objData.data.idproducto;
+                document.querySelector("#idProducto").value = objData.data.idproductolap;
                 document.querySelector("#txtCodigo").value = objData.data.codigo;
                 document.querySelector("#txtColor").value = objData.data.color;
                 document.querySelector("#txtNombre").value = objData.data.nombre_producto;
@@ -191,9 +191,9 @@ function fntEditProducto(idproducto){
     }
 }
 
-function fntDelProducto(idproducto){
+function fntDelProducto(idproductolap){
 
-    var idProducto = idproducto;
+    var idProducto = idproductolap;
     swal({
         title: "Eliminar Producto",
         text: "¿Realmente quiere eliminar el Producto?",

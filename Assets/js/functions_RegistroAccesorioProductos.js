@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function(){
             "dataSrc":""
         },
         "columns": [
-    {"data": "idproducto"},
+    {"data": "idproductoacc"},
     {"data": "codigo"},
     {"data": "nombre_producto"},
     {"data": "especificaciones"},
@@ -114,8 +114,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
-function fntViewProducto(idproducto){
-    var idproducto = idproducto;
+function fntViewProducto(idproductoacc){
+    var idproducto = idproductoacc;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
     var ajaxUrl = base_url+'/accesorioProducto/getProducto/'+idproducto;
     request.open("GET",ajaxUrl,true);
@@ -148,13 +148,13 @@ function fntViewProducto(idproducto){
 }
 //SSSSSSSSSSS
 
-function fntEditProducto(idproducto){
+function fntEditProducto(idproductoacc){
     document.querySelector('#titleModal').innerHTML ="Actualizar Producto";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
     document.querySelector('#btnText').innerHTML ="Actualizar";
 
-    var idproducto =idproducto;
+    var idproducto =idproductoacc;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
     var ajaxUrl = base_url+'/accesorioProducto/getProducto/'+idproducto;
     request.open("GET",ajaxUrl,true);
@@ -166,15 +166,16 @@ function fntEditProducto(idproducto){
 
             if(objData.status)
             {
-                document.querySelector("#idProducto").value = objData.data.idproducto;
+                document.querySelector("#idProducto").value = objData.data.idproductoacc;
                 document.querySelector("#txtCodigo").value = objData.data.codigo;
                 document.querySelector("#txtColor").value = objData.data.color;
-                document.querySelector("#txtImagen").value = objData.data.imagen;
                 document.querySelector("#txtNombre").value = objData.data.nombre_producto;
                 document.querySelector("#txtEspecificacion").value = objData.data.especificaciones;
                 document.querySelector("#txtPrecio").value = objData.data.precio;
                 document.querySelector("#txtCategoria").value = objData.data.categoria;
                 document.querySelector("#txtFecha").value = objData.data.fecha_registro;
+                document.querySelector("#txtImagen").value = objData.data.imagen;
+
 
                 if(objData.data.status == 1){
                     document.querySelector("#listStatus").value = 1;
@@ -189,9 +190,9 @@ function fntEditProducto(idproducto){
     }
 }
 
-function fntDelProducto(idproducto){
+function fntDelProducto(idproductoacc){
 
-    var idProducto = idproducto;
+    var idProducto = idproductoacc;
     swal({
         title: "Eliminar Producto",
         text: "¿Realmente quiere eliminar el Producto?",

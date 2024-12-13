@@ -112,9 +112,9 @@
         }
 
         $arrData[$i]['options'] = '<div class="text-center">
-            <button class="btn btn-info btn-sm btnViewProducto" onClick="fntViewProducto(' . $arrData[$i]['idproducto'] . ')" title="Ver producto"><i class="far fa-eye"></i></button>
-            <button class="btn btn-primary btn-sm btnEditProducto" onClick="fntEditProducto(' . $arrData[$i]['idproducto'] . ')" title="Editar producto"><i class="fas fa-pencil-alt"></i></button>
-            <button class="btn btn-danger btn-sm btnDelProducto" onClick="fntDelProducto(' . $arrData[$i]['idproducto'] . ')" title="Eliminar producto"><i class="far fa-trash-alt"></i></button>
+            <button class="btn btn-info btn-sm btnViewProducto" onClick="fntViewProducto(' . $arrData[$i]['idproductoacc'] . ')" title="Ver producto"><i class="far fa-eye"></i></button>
+            <button class="btn btn-primary btn-sm btnEditProducto" onClick="fntEditProducto(' . $arrData[$i]['idproductoacc'] . ')" title="Editar producto"><i class="fas fa-pencil-alt"></i></button>
+            <button class="btn btn-danger btn-sm btnDelProducto" onClick="fntDelProducto(' . $arrData[$i]['idproductoacc'] . ')" title="Eliminar producto"><i class="far fa-trash-alt"></i></button>
         </div>';
     }
     echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
