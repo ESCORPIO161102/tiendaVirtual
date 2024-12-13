@@ -12,7 +12,7 @@
   <div class="row">
 
     <div class="tile" style="width: 100% !important;">
-      <div class="tile-bodyy">CATALOGO DE PRODUCTOS</div>
+      <div class="tile-bodyy">CATALOGO DE ACCESORIOS </div>
       <div id="lista-productos" style="width: 100% !important;">
         <h1 id="encabezado" class="encabezado">Infortec Productos</h1>
 
@@ -22,32 +22,35 @@
           foreach ($arrProductos as $key => $value) {
             ?>
             <div class="card">
-              <img src="<?=$value["imagen"] ?>" style="object-fit: contain;"
-                class="imagen-producto u-full-width" data-id="007">
+              <img src="uploads/<?=$value["imagen"] ?>" style="object-fit: contain;"
+                class="imagen-producto u-full-width" data-id="<?=$value["idproducto"] ?>">
               <div class="info-card">
                 <h4><?= $value["nombre_producto"] ?></h4>
+                <p><?= $value["color"] ?></p>
                 <p hidden><?=$value["especificaciones"] ?></p>
-                <p>Referencia 024010</p>
+                <p hidden id="ca">Categoria : <?=$value["categoria"] ?></p>
+                <p>Productos Originales con Garantía</p>
                 <p class="stock">!Últimas unidades en stock</p>
                 <img src="<?= media(); ?>/images/estrellas.png">
-                <p class="precio">S/.1639<span class="u-pull-right">S/.<?= $value["precio"] ?></span></p>
-                <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="007">Agregar Al
+                <p class="precio"><span class="u-pull-right">S/.<?= $value["precio"] ?></span></p>
+                <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="<?=$value["idproducto"] ?>">Agregar Al
                   Carrito</a>
               </div>
             </div>
             <!-- Detalles del producto 1 -->
-            <div id="detallesProducto-007" class="detalles-producto oculto">
+            <div id="detallesProducto-<?=$value["idproducto"] ?>" class="detalles-producto oculto">
               <i class="fa-solid fa-square-xmark close-accesorios"
                 style="color: #cf0707; float: left; font-size: 30px; cursor: pointer;"></i>
               <div class="contenido-detalles">
-                <img id="imagenProducto-007" src="<?= media(); ?>/images/2.jpg" alt="Producto" class="imagen-detalles">
+                <img id="imagenProducto-<?=$value["idproducto"] ?>" alt="Producto" class="imagen-detalles">
                 <div class="info-detalles">
-                  <h2 id="tituloProducto-007"></h2>
-                  <p id="descripcionProducto-007"></p>
-                  <p id="precioProducto-007"></p>
+                  <h2 id="tituloProducto-<?=$value["idproducto"] ?>"></h2>
+                  <p id="descripcionProducto-<?=$value["idproducto"] ?>"></p>
+                  <p id="categoriaProducto-<?=$value["idproducto"] ?>"></p>
+                  <p id="precioProducto-<?=$value["idproducto"] ?>"></p>
                 </div>
               </div>
-              <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="007">Agregar Al
+              <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="<?=$value["idproducto"] ?>">Agregar Al
                 Carrito</a>
             </div>
             <?php
