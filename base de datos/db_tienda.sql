@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-12-2024 a las 07:49:27
+-- Tiempo de generación: 18-12-2024 a las 09:55:28
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -119,7 +119,7 @@ INSERT INTO `persona` (`idpersona`, `identificacion`, `nombres`, `apellidos`, `t
 --
 
 CREATE TABLE `productos_accesorios` (
-  `idproducto` bigint(20) NOT NULL,
+  `idproductoacc` bigint(20) NOT NULL,
   `codigo` int(30) NOT NULL,
   `nombre_producto` varchar(60) NOT NULL,
   `especificaciones` text NOT NULL,
@@ -135,7 +135,7 @@ CREATE TABLE `productos_accesorios` (
 -- Volcado de datos para la tabla `productos_accesorios`
 --
 
-INSERT INTO `productos_accesorios` (`idproducto`, `codigo`, `nombre_producto`, `especificaciones`, `color`, `imagen`, `precio`, `fecha_registro`, `categoria`, `status`) VALUES
+INSERT INTO `productos_accesorios` (`idproductoacc`, `codigo`, `nombre_producto`, `especificaciones`, `color`, `imagen`, `precio`, `fecha_registro`, `categoria`, `status`) VALUES
 (43, 1, 'Mause Gamer Rayzer', 'Mause Gamer Rayzer Con Luces Rgb Con Alta Pracision Para Sacar Lo Mejor De Ti En Tus Juegos', 'RGB', '7.jpg', 356, '2024-12-13', 'Mause', 1);
 
 -- --------------------------------------------------------
@@ -145,7 +145,7 @@ INSERT INTO `productos_accesorios` (`idproducto`, `codigo`, `nombre_producto`, `
 --
 
 CREATE TABLE `productos_laptops` (
-  `idproducto` bigint(20) NOT NULL,
+  `idproductolap` bigint(20) NOT NULL,
   `codigo` int(30) NOT NULL,
   `nombre_producto` varchar(60) NOT NULL,
   `especificaciones` text NOT NULL,
@@ -161,7 +161,7 @@ CREATE TABLE `productos_laptops` (
 -- Volcado de datos para la tabla `productos_laptops`
 --
 
-INSERT INTO `productos_laptops` (`idproducto`, `codigo`, `nombre_producto`, `especificaciones`, `color`, `imagen`, `precio`, `fecha_registro`, `categoria`, `status`) VALUES
+INSERT INTO `productos_laptops` (`idproductolap`, `codigo`, `nombre_producto`, `especificaciones`, `color`, `imagen`, `precio`, `fecha_registro`, `categoria`, `status`) VALUES
 (44, 1, 'Laptop Gamer', '-laptop Gamer De 32gb De Ram. -SSD De 2T -con Targeta Grafica De 4gb', 'Plomo', '3.jpg', 5623, '2024-12-17', 'Laptops', 1);
 
 -- --------------------------------------------------------
@@ -222,7 +222,7 @@ INSERT INTO `usuarios` (`id`, `nombre_usuario`, `password`) VALUES
 (9, 'who', '53d670af9bb16ea82e7ef41ee23ec6df'),
 (10, 'ryu', 'd4cfab1b518d245bc1fc8db52b6d8ddc'),
 (11, 'wqq', 'b2ca678b4c936f905fb82f2733f5297f'),
-(12, 'Escorpio', '087c861ebd4b429a423d8e0b966863c0'),
+(12, 'Escorpio', 'dd77279f7d325eec933f05b1672f6a1f'),
 (13, 'isei', '365b532c2c1721f4202f8b483ab9f27e');
 
 --
@@ -254,13 +254,13 @@ ALTER TABLE `persona`
 -- Indices de la tabla `productos_accesorios`
 --
 ALTER TABLE `productos_accesorios`
-  ADD PRIMARY KEY (`idproducto`);
+  ADD PRIMARY KEY (`idproductoacc`);
 
 --
 -- Indices de la tabla `productos_laptops`
 --
 ALTER TABLE `productos_laptops`
-  ADD PRIMARY KEY (`idproducto`);
+  ADD PRIMARY KEY (`idproductolap`);
 
 --
 -- Indices de la tabla `rol`
@@ -301,13 +301,13 @@ ALTER TABLE `persona`
 -- AUTO_INCREMENT de la tabla `productos_accesorios`
 --
 ALTER TABLE `productos_accesorios`
-  MODIFY `idproducto` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `idproductoacc` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de la tabla `productos_laptops`
 --
 ALTER TABLE `productos_laptops`
-  MODIFY `idproducto` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `idproductolap` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`

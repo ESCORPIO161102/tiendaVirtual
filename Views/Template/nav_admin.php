@@ -12,19 +12,13 @@
         <li>
             <a class="app-menu__item" href="<?= base_url(); ?>/laptops">
                 <i class="app-menu__icon fa fa-dashboard"></i>
-                <span class="app-menu__label">Laptos</span>
+                <span class="app-menu__label">Laptops</span>
             </a>
         </li>
         <li>
             <a class="app-menu__item" href="<?= base_url(); ?>/accesorios">
                 <i class="app-menu__icon fa fa-dashboard"></i>
                 <span class="app-menu__label">Accesorios</span>
-            </a>
-        </li>
-        <li>
-            <a class="app-menu__item" href="<?= base_url(); ?>/usuarios">
-                <i class="app-menu__icon fa fa-dashboard"></i>
-                <span class="app-menu__label">Registro Usuarios</span>
             </a>
         </li>
         <li>
@@ -40,9 +34,21 @@
             </a>
         </li>
         <li>
+            <a class="app-menu__item" href="<?= base_url(); ?>/usuarios">
+                <i class="app-menu__icon fa fa-dashboard"></i>
+                <span class="app-menu__label">Registro Usuarios</span>
+            </a>
+        </li>
+        <li>
             <a class="app-menu__item" href="<?= base_url(); ?>/roles">
                 <i class="app-menu__icon fa fa-dashboard"></i>
                 <span class="app-menu__label">Roles</span>
+            </a>
+        </li>
+        <li>
+            <a class="app-menu__item" href="<?= base_url(); ?>/historial">
+                <i class="app-menu__icon fa fa-dashboard"></i>
+                <span class="app-menu__label">Historial Compras</span>
             </a>
         </li>
         <li class="treeview">
